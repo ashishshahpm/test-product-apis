@@ -26,6 +26,10 @@ export const action = async ({ request }) => {
   const material = ["Wood", "Steel", "Acrylic", "Fiber"][
     Math.floor(Math.random() * 4)
   ];
+
+  const color = ["Reddish", "Greenish", "Blueish"];
+  const size = ["S", "M", "L"];
+
   const response = await admin.graphql(
     `#graphql
       mutation populateProduct($input: ProductInput!) {
@@ -68,17 +72,17 @@ export const action = async ({ request }) => {
             {
               "name": "Color",
               "values": [
-                { "name": "Red" },
-                { "name": "Green" },
-                { "name": "Blue" }
+                { "name": color[0]},
+                { "name": color[1] },
+                { "name": color[2] }
               ]
             },
             {
               "name": "Size",
               "values": [
-                { "name": "Small" },
-                { "name": "Medium" },
-                { "name": "Large" }
+                { "name": size[0]},
+                { "name": size[1] },
+                { "name": size[2] }
               ]
             }
           ]

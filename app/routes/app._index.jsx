@@ -30,6 +30,27 @@ export const action = async ({ request }) => {
   const color = ["Reddish", "Greenish", "Blueish"];
   const size = ["S", "M", "L"];
 
+  const numOptionValues = Math.floor(Math.random()*3);
+ 
+  const optionValuesDynamic = [
+    {
+      "name": "Color",
+      "values": [
+        { "name": color[0] },
+        { "name": color[1] },
+        { "name": color[2] }
+      ]
+    },
+    {
+      "name": "Size",
+      "values": [
+        { "name": size[0] },
+        { "name": size[1] },
+        { "name": size[2] }
+      ]
+    }
+  ]    
+
   const response = await admin.graphql(
     `#graphql
       mutation populateProduct($input: ProductInput!) {
@@ -68,24 +89,7 @@ export const action = async ({ request }) => {
         input: {
           title: `${material} Snowboard`,
           //variants: [{ price: Math.random() * 100 }],
-          "optionValues": [
-            {
-              "name": "Color",
-              "values": [
-                { "name": color[0]},
-                { "name": color[1] },
-                { "name": color[2] }
-              ]
-            },
-            {
-              "name": "Size",
-              "values": [
-                { "name": size[0]},
-                { "name": size[1] },
-                { "name": size[2] }
-              ]
-            }
-          ]
+          "optionValues": optionValuesDynamic
         },
       },
 //      version: '2023-10', // Specify the desired API version here

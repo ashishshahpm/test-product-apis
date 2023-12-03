@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://linked-warning-stripes-anatomy.trycloudflare.com"
+application_url = "https://bath-kw-poultry-aqua.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://linked-warning-stripes-anatomy.trycloudflare.com/auth/callback",
-  "https://linked-warning-stripes-anatomy.trycloudflare.com/auth/shopify/callback",
-  "https://linked-warning-stripes-anatomy.trycloudflare.com/api/auth/callback",
-  "https://linked-warning-stripes-anatomy.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://bath-kw-poultry-aqua.trycloudflare.com/auth/callback",
+  "https://bath-kw-poultry-aqua.trycloudflare.com/auth/shopify/callback",
+  "https://bath-kw-poultry-aqua.trycloudflare.com/api/auth/callback",
+  "https://bath-kw-poultry-aqua.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

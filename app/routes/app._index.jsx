@@ -22,7 +22,8 @@ export const loader = async ({ request }) => {
 
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
-  const color = ["Red", "Saffron", "Yellow", "Green"][
+ 
+  const material = ["Wood", "Steel", "Acrylic", "Fiber"][
     Math.floor(Math.random() * 4)
   ];
   const response = await admin.graphql(
@@ -61,7 +62,7 @@ export const action = async ({ request }) => {
     {
       variables: {
         input: {
-          title: `${color} Snowboard`,
+          title: `${material} Snowboard`,
           //variants: [{ price: Math.random() * 100 }],
           "optionValues": [
             {
@@ -173,6 +174,11 @@ export default function Index() {
                   <Button loading={isLoading} onClick={generateProduct}>
                     Generate a product
                   </Button>
+
+                  <Button loading={isLoading} onClick={generateProduct}>
+                    Modify a product
+                  </Button>
+                  
                   {actionData?.product && (
                     <Button
                       url={`shopify:admin/products/${productId}`}

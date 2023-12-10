@@ -27,7 +27,8 @@ export const action = async ({ request }) => {
     Math.floor(Math.random() * 4)
   ];
 
-  const color = ["Reddish", "Greenish", "Blueish"];
+  const color = ["Red", "Green", "Blue"];
+  
   const size = ["S", "M", "L"];
 
   const numOptionValues = Math.floor(Math.random()*3);

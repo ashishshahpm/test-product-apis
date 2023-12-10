@@ -97,6 +97,43 @@ export const action = async ({ request }) => {
     }
   );
   const responseJson = await response.json();
+  const temp = responseJson.data.productCreate.product.id; // Read the product ID
+  console.log(temp)
+
+  // Update the product title to "Hello"
+  const productUpdateMutation = `
+    mutation productUpdate(
+      $input: ProductInput!
+    ) 
+    {
+      productUpdate(input: $input) {
+        product {
+          id
+          title
+          handle
+        }
+      }
+    }
+`;
+
+  const productUpdateInput = {
+    id: temp,
+    title: "Hello",
+  };
+
+  const responseUpdate = await admin.graphql(productUpdateMutation, {
+    variables: {
+     input: productUpdateInput,
+    },
+  });
+
+  if (responseUpdate.errors) {
+    console.error(responseUpdate.errors);
+  } 
+  else {
+// The product title has been updated to "Hello"
+  console.log("Product updated successfully");
+  }
 
   return json({
     product: responseJson.data.productCreate.product,

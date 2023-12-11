@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://oman-trademarks-l-dallas.trycloudflare.com"
+application_url = "https://earthquake-quote-wages-antonio.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://oman-trademarks-l-dallas.trycloudflare.com/auth/callback",
-  "https://oman-trademarks-l-dallas.trycloudflare.com/auth/shopify/callback",
-  "https://oman-trademarks-l-dallas.trycloudflare.com/api/auth/callback",
-  "https://oman-trademarks-l-dallas.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://earthquake-quote-wages-antonio.trycloudflare.com/auth/callback",
+  "https://earthquake-quote-wages-antonio.trycloudflare.com/auth/shopify/callback",
+  "https://earthquake-quote-wages-antonio.trycloudflare.com/api/auth/callback",
+  "https://earthquake-quote-wages-antonio.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

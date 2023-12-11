@@ -55,6 +55,31 @@ export const action = async ({ request }) => {
     }
   ]    
 
+//creating a variable that holds the inputs for the productVariantsBulkCreate mutation
+  const temp2 = [
+    {
+      "price": 1,
+      "optionValues": [
+        {"name": color[0], "optionName": "Color"},
+        {"name": size[1], "optionName": "Size"}
+      ]
+    },
+    {
+      "price": 2,
+      "optionValues": [
+        {"name": color[0], "optionName": "Color"},
+        {"name": size[2], "optionName": "Size"}
+      ]
+    },
+    {
+      "price": 3,
+      "optionValues": [
+        {"name": color[1], "optionName": "Color"},
+        {"name": size[0], "optionName": "Size"}
+      ]
+    }
+  ];
+
  // creating a variable that holds the inputs for the productCreate mutation 
   const inputData = {
     title: `${material} Snowboard`,
@@ -110,10 +135,10 @@ export const action = async ({ request }) => {
 
   const responseJson = await response.json();
   const temp = responseJson.data.productCreate.product.id; // Read the product ID
-  console.log(temp)
 
   // Add variants to the product
-  const productUpdateMutation = `
+  const responseWithVariants = await admin.graphql (
+    `#graphql
     mutation addVariants($productID: ID!, $variantsInput: [ProductVariantsBulkInput!]!){
       productVariantsBulkCreate(productId: $productID, variants: $variantsInput) {
         productVariants {
@@ -125,45 +150,20 @@ export const action = async ({ request }) => {
           }
         }
       }
-    }
-`;
+    }`,
 
-  const temp2 = [
     {
-      "price": 1,
-      "optionValues": [
-        {"name": color[0], "optionName": "Color"},
-        {"name": size[1], "optionName": "Size"}
-      ]
-    },
-    {
-      "price": 2,
-      "optionValues": [
-        {"name": color[0], "optionName": "Color"},
-        {"name": size[2], "optionName": "Size"}
-      ]
+      variables: {
+        productID: temp,
+        variantsInput: temp2,
+       },
     }
-  ];
 
-  const responseUpdate = await admin.graphql(productUpdateMutation, {
-    variables: {
-     productID: temp,
-     variantsInput: temp2,
-    },
-  });
+  );
+  
+  return null;
 
-  if (responseUpdate.errors) {
-    console.error(responseUpdate.errors);
-  } 
-  else {
-// The product title has been updated to "Hello"
-  console.log("Product updated successfully");
-  }
-
-  return json({
-    product: responseJson.data.productCreate.product,
-  });
-};
+};    
 
 export default function Index() {
   const nav = useNavigation();

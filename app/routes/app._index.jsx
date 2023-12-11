@@ -104,9 +104,8 @@ export const action = async ({ request }) => {
                 id
                 name
                 hasVariants
-        }
-      }
-
+              } 
+          }
             variants(first: 10) {
               edges {
                 node {
@@ -141,12 +140,18 @@ export const action = async ({ request }) => {
     `#graphql
     mutation addVariants($productID: ID!, $variantsInput: [ProductVariantsBulkInput!]!){
       productVariantsBulkCreate(productId: $productID, variants: $variantsInput) {
-        productVariants {
+        product {
           id
           title
-          selectedOptions {
-            name
-            value
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
           }
         }
       }
@@ -163,7 +168,7 @@ export const action = async ({ request }) => {
   
   const responseWithVariantsJson = await responseWithVariants.json();
   // Return the product variants data in JSON format
-  return json({ productVariants: responseWithVariantsJson.data.productVariantsBulkCreate.productVariants });
+  return json({ productVariants: responseWithVariantsJson.data.productVariantsBulkCreate.product });
 
 //  return null;
 
@@ -176,10 +181,10 @@ export default function Index() {
   const isLoading =
     ["loading", "submitting"].includes(nav.state) && nav.formMethod === "POST";
 
- // const productId = actionData?.product?.id.replace(
+  const productId = actionData?.productVariants?.id.replace(
     "gid://shopify/Product/",
     ""
- // );
+  );
 
   useEffect(() => {
     if (actionData?.productVariants) {
@@ -257,7 +262,7 @@ export default function Index() {
                   
                   {actionData?.productVariants && (
                     <Button
-                      url={`shopify:admin/products/7843564355736`}
+                      url={`shopify:admin/products/${productId}`}
                       target="_blank"
                       variant="plain"
                     >

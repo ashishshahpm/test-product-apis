@@ -161,7 +161,11 @@ export const action = async ({ request }) => {
 
   );
   
-  return null;
+  const responseWithVariantsJson = await responseWithVariants.json();
+  // Return the product variants data in JSON format
+  return json({ productVariants: responseWithVariantsJson.data.productVariantsBulkCreate.productVariants });
+
+//  return null;
 
 };    
 
@@ -171,16 +175,17 @@ export default function Index() {
   const submit = useSubmit();
   const isLoading =
     ["loading", "submitting"].includes(nav.state) && nav.formMethod === "POST";
-  const productId = actionData?.product?.id.replace(
+
+ // const productId = actionData?.product?.id.replace(
     "gid://shopify/Product/",
     ""
-  );
+ // );
 
   useEffect(() => {
-    if (productId) {
+    if (actionData?.productVariants) {
       shopify.toast.show("Product created");
     }
-  }, [productId]);
+  }, [actionData?.productVariants]);
   const generateProduct = () => submit({}, { replace: true, method: "POST" });
 
   return (
@@ -250,9 +255,9 @@ export default function Index() {
                     Modify a product
                   </Button>
                   
-                  {actionData?.product && (
+                  {actionData?.productVariants && (
                     <Button
-                      url={`shopify:admin/products/${productId}`}
+                      url={`shopify:admin/products/7843564355736`}
                       target="_blank"
                       variant="plain"
                     >
@@ -260,7 +265,7 @@ export default function Index() {
                     </Button>
                   )}
                 </InlineStack>
-                {actionData?.product && (
+                {actionData?.productVariants && (
                   <Box
                     padding="400"
                     background="bg-surface-active"
@@ -270,7 +275,7 @@ export default function Index() {
                     overflowX="scroll"
                   >
                     <pre style={{ margin: 0 }}>
-                      <code>{JSON.stringify(actionData.product, null, 2)}</code>
+                      <code>{JSON.stringify(actionData.productVariants, null, 2)}</code>
                     </pre>
                   </Box>
                 )}

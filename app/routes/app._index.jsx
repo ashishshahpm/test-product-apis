@@ -24,16 +24,18 @@ export const loader = async ({ request }) => {
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
  
+// Assingning material of the product that will be used in its title
   const material = ["Wood", "Steel", "Acrylic", "Fiber"][
     Math.floor(Math.random() * 4)
   ];
-
-  const color = ["Red", "Green", "Blue"];
   
+ // assigning values for the options and their values 
+  const color = ["Red", "Green", "Blue"];
   const size = ["S", "M", "L"];
 
   const numOptionValues = Math.floor(Math.random()*3);
- 
+
+// creating the optionValues variable that will be used in the productCreate mutation
   const optionValuesDynamic = [
     {
       "name": "Color",
@@ -53,11 +55,13 @@ export const action = async ({ request }) => {
     }
   ]    
 
+ // creating a variable that holds the inputs for the productCreate mutation 
   const inputData = {
     title: `${material} Snowboard`,
     "optionValues": optionValuesDynamic,
   };
   
+  // calls the productCreate mutation
   const response = await admin.graphql(
     `#graphql
       mutation populateProduct($input: ProductInput!) {
@@ -108,7 +112,7 @@ export const action = async ({ request }) => {
   const temp = responseJson.data.productCreate.product.id; // Read the product ID
   console.log(temp)
 
-  // Update the product title to "Hello"
+  // Add variants to the product
   const productUpdateMutation = `
     mutation addVariants($productID: ID!, $variantsInput: [ProductVariantsBulkInput!]!){
       productVariantsBulkCreate(productId: $productID, variants: $variantsInput) {

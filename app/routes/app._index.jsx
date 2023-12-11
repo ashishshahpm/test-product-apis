@@ -13,13 +13,14 @@ import {
   Link,
   InlineStack,
 } from "@shopify/polaris";
+
 import { authenticate } from "../shopify.server";
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
-
   return null;
 };
 
+// Code that executes when Generate Product is clicked
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
  
@@ -52,6 +53,11 @@ export const action = async ({ request }) => {
     }
   ]    
 
+  const inputData = {
+    title: `${material} Snowboard`,
+    "optionValues": optionValuesDynamic,
+  };
+  
   const response = await admin.graphql(
     `#graphql
       mutation populateProduct($input: ProductInput!) {
@@ -96,34 +102,49 @@ export const action = async ({ request }) => {
 //      version: '2023-10', // Specify the desired API version here
     }
   );
+
+
   const responseJson = await response.json();
   const temp = responseJson.data.productCreate.product.id; // Read the product ID
   console.log(temp)
 
   // Update the product title to "Hello"
   const productUpdateMutation = `
-    mutation productUpdate(
-      $input: ProductInput!
-    ) 
-    {
-      productUpdate(input: $input) {
-        product {
+    mutation addVariants($productID: ID!, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, variants: $variantsInput) {
+        productVariants {
           id
           title
-          handle
+          selectedOptions {
+            name
+            value
+          }
         }
       }
     }
 `;
 
-  const productUpdateInput = {
-    id: temp,
-    title: "Hello",
-  };
+  const temp2 = [
+    {
+      "price": 1,
+      "optionValues": [
+        {"name": color[0], "optionName": "Color"},
+        {"name": size[1], "optionName": "Size"}
+      ]
+    },
+    {
+      "price": 2,
+      "optionValues": [
+        {"name": color[0], "optionName": "Color"},
+        {"name": size[2], "optionName": "Size"}
+      ]
+    }
+  ];
 
   const responseUpdate = await admin.graphql(productUpdateMutation, {
     variables: {
-     input: productUpdateInput,
+     productID: temp,
+     variantsInput: temp2,
     },
   });
 

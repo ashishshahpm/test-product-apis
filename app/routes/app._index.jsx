@@ -30,9 +30,9 @@ export const action = async ({ request }) => {
   ];
   
  // assigning values for the options and their values 
-  const color = ["Red", "Green", "Blue"];
-  const size = ["S", "M", "L"];
-  const fit = ["Skinny", "Slim", "Regular"];
+  const color = ["Red", "Green", "Blue", "Black", "Brown", "White"];
+  const size = ["XS", "S", "M", "L", "XL", "XXL"];
+  const length = ["7", "8", "9", "10", "11", "12"];
 
   const colorOption = {
     "name": "Color",
@@ -52,35 +52,35 @@ export const action = async ({ request }) => {
       ]
   }
 
-  const fitOption = {
-    "name": "Fit",
+  const lengthOption = {
+    "name": "Length",
       "values": [
-        { "name": fit[0] },
-        { "name": fit[1] },
-        { "name": fit[2] }
+        { "name": length[0] },
+        { "name": length[1] },
+        { "name": length[2] }
       ]
   }
   const numOptionValues = Math.floor(Math.random()*3);
 
 // creating the optionValues variable that will be used in the productCreate mutation
-    const optionArray = [colorOption, sizeOption, fitOption];
+    const optionArray = [colorOption, sizeOption, lengthOption];
 
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = 27;
+  const numVariants = 216;
   const variantsToCreate = [];
-  let i = 1;
+  let i = 0;
   while (i < numVariants) {
-    colorPointer = Math.floor (i/9);
-    sizePointer = Math.floor ((i%9)/3);
-    fitPointer = i%3;
+    colorPointer = Math.floor (i/36);
+    sizePointer = Math.floor (i/6)%6;
+    lengthPointer = i%6;
     variantObject =  {
       "price": i+1,
       "optionValues": [
         {"name": color[colorPointer], "optionName": "Color"},
         {"name": size[sizePointer], "optionName": "Size"},
-        {"name": fit[fitPointer], "optionName": "Fit"}
+        {"name": length[lengthPointer], "optionName": "Length"}
       ]
     }
     variantsToCreate.push(variantObject);
@@ -131,12 +131,6 @@ export const action = async ({ request }) => {
     }
   ];
 */
-
- // creating a variable that holds the inputs for the productCreate mutation 
-  const inputData = {
-    title: `${material} Snowboard`,
-    "optionValues": optionArray,
-  };
   
   // calls the productCreate mutation
   const response = await admin.graphql(
@@ -190,8 +184,8 @@ export const action = async ({ request }) => {
   // Add variants to the product
   const responseWithVariants = await admin.graphql (
     `#graphql
-    mutation addVariants($productID: ID!, $variantsInput: [ProductVariantsBulkInput!]!){
-      productVariantsBulkCreate(productId: $productID, variants: $variantsInput) {
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
         product {
           id
           title
@@ -212,7 +206,7 @@ export const action = async ({ request }) => {
     {
       variables: {
         productID: createdProductID,
-        //strategy: REMOVE_STANDALONE_VARIANT,
+        strategy: "REMOVE_STANDALONE_VARIANT",
         variantsInput: variantsToCreate,
        },
     }

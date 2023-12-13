@@ -25,13 +25,15 @@ export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
  
 // Assingning material of the product that will be used in its title
-  const material = ["Wood", "Steel", "Acrylic", "Fiber"][
+  const material = ["Cotton", "Nylon", "Wool", "Hybrid"][
     Math.floor(Math.random() * 4)
   ];
   
  // assigning values for the options and their values 
   const color = ["Red", "Green", "Blue"];
   const size = ["S", "M", "L"];
+  const fit = ["Skinny", "Slim", "Regular"];
+
 
   const numOptionValues = Math.floor(Math.random()*3);
 
@@ -52,30 +54,58 @@ export const action = async ({ request }) => {
         { "name": size[1] },
         { "name": size[2] }
       ]
+    },
+    {
+      "name": "Fit",
+      "values": [
+        { "name": fit[0] },
+        { "name": fit[1] },
+        { "name": fit[2] }
+      ]
     }
   ]    
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  const temp2 = [
+  const variantsToCreate = [
     {
       "price": 1,
       "optionValues": [
         {"name": color[0], "optionName": "Color"},
-        {"name": size[1], "optionName": "Size"}
+        {"name": size[0], "optionName": "Size"},
+        {"name": fit[1], "optionName": "Fit"}
       ]
     },
     {
       "price": 2,
       "optionValues": [
         {"name": color[0], "optionName": "Color"},
-        {"name": size[2], "optionName": "Size"}
+        {"name": size[0], "optionName": "Size"},
+        {"name": fit[2], "optionName": "Fit"}
+
       ]
     },
     {
       "price": 3,
       "optionValues": [
         {"name": color[1], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"}
+        {"name": size[0], "optionName": "Size"},
+        {"name": fit[0], "optionName": "Fit"}
+      ]
+    },
+    {
+      "price": 4,
+      "optionValues": [
+        {"name": color[1], "optionName": "Color"},
+        {"name": size[0], "optionName": "Size"},
+        {"name": fit[1], "optionName": "Fit"}
+      ]
+    },
+    {
+      "price": 5,
+      "optionValues": [
+        {"name": color[1], "optionName": "Color"},
+        {"name": size[0], "optionName": "Size"},
+        {"name": fit[2], "optionName": "Fit"}
       ]
     }
   ];
@@ -122,7 +152,7 @@ export const action = async ({ request }) => {
     {
       variables: {
         input: {
-          title: `${material} Snowboard`,
+          title: `${material} Pants`,
           //variants: [{ price: Math.random() * 100 }],
           "optionValues": optionValuesDynamic
         },
@@ -133,7 +163,7 @@ export const action = async ({ request }) => {
 
 
   const responseJson = await response.json();
-  const temp = responseJson.data.productCreate.product.id; // Read the product ID
+  const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
 
   // Add variants to the product
   const responseWithVariants = await admin.graphql (
@@ -159,8 +189,8 @@ export const action = async ({ request }) => {
 
     {
       variables: {
-        productID: temp,
-        variantsInput: temp2,
+        productID: createdProductID,
+        variantsInput: variantsToCreate,
        },
     }
 

@@ -34,38 +34,40 @@ export const action = async ({ request }) => {
   const size = ["S", "M", "L"];
   const fit = ["Skinny", "Slim", "Regular"];
 
+  const colorObject = {
+    "name": "Color",
+    "values": [
+      { "name": color[0] },
+      { "name": color[1] },
+      { "name": color[2] }
+    ]
+  }
 
-  const numOptionValues = Math.floor(Math.random()*3);
-
-// creating the optionValues variable that will be used in the productCreate mutation
-  const optionValuesDynamic = [
-    {
-      "name": "Color",
-      "values": [
-        { "name": color[0] },
-        { "name": color[1] },
-        { "name": color[2] }
-      ]
-    },
-    {
-      "name": "Size",
+  const sizeObject = {
+    "name": "Size",
       "values": [
         { "name": size[0] },
         { "name": size[1] },
         { "name": size[2] }
       ]
-    },
-    {
-      "name": "Fit",
+  }
+
+  const fitObject = {
+    "name": "Fit",
       "values": [
         { "name": fit[0] },
         { "name": fit[1] },
         { "name": fit[2] }
       ]
-    }
-  ]    
+  }
+  const numOptionValues = Math.floor(Math.random()*3);
+
+// creating the optionValues variable that will be used in the productCreate mutation
+    const optionValuesDynamic = [colorObject, sizeObject, fitObject];
+
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
+  const numVariants = Math.floor(Math.random() * 27);
   const variantsToCreate = [
     {
       "price": 1,

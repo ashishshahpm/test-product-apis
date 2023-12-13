@@ -34,7 +34,7 @@ export const action = async ({ request }) => {
   const size = ["S", "M", "L"];
   const fit = ["Skinny", "Slim", "Regular"];
 
-  const colorObject = {
+  const colorOption = {
     "name": "Color",
     "values": [
       { "name": color[0] },
@@ -43,7 +43,7 @@ export const action = async ({ request }) => {
     ]
   }
 
-  const sizeObject = {
+  const sizeOption = {
     "name": "Size",
       "values": [
         { "name": size[0] },
@@ -52,7 +52,7 @@ export const action = async ({ request }) => {
       ]
   }
 
-  const fitObject = {
+  const fitOption = {
     "name": "Fit",
       "values": [
         { "name": fit[0] },
@@ -63,11 +63,30 @@ export const action = async ({ request }) => {
   const numOptionValues = Math.floor(Math.random()*3);
 
 // creating the optionValues variable that will be used in the productCreate mutation
-    const optionValuesDynamic = [colorObject, sizeObject, fitObject];
+    const optionArray = [colorOption, sizeOption, fitOption];
 
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  const numVariants = Math.floor(Math.random() * 27);
+  //const numVariants = Math.floor(Math.random() * 27 + 1);
+  const numVariants = 27;
+  const variantsToCreate = [];
+  let i = 1;
+  while (i < numVariants) {
+    colorPointer = Math.floor (i/9);
+    sizePointer = Math.floor ((i%9)/3);
+    fitPointer = i%3;
+    variantObject =  {
+      "price": i+1,
+      "optionValues": [
+        {"name": color[colorPointer], "optionName": "Color"},
+        {"name": size[sizePointer], "optionName": "Size"},
+        {"name": fit[fitPointer], "optionName": "Fit"}
+      ]
+    }
+    variantsToCreate.push(variantObject);
+    i++;
+  }
+/*
   const variantsToCreate = [
     {
       "price": 1,
@@ -111,11 +130,12 @@ export const action = async ({ request }) => {
       ]
     }
   ];
+*/
 
  // creating a variable that holds the inputs for the productCreate mutation 
   const inputData = {
     title: `${material} Snowboard`,
-    "optionValues": optionValuesDynamic,
+    "optionValues": optionArray,
   };
   
   // calls the productCreate mutation
@@ -156,7 +176,7 @@ export const action = async ({ request }) => {
         input: {
           title: `${material} Pants`,
           //variants: [{ price: Math.random() * 100 }],
-          "optionValues": optionValuesDynamic
+          "optionValues": optionArray
         },
       },
 //      version: '2023-10', // Specify the desired API version here
@@ -192,6 +212,7 @@ export const action = async ({ request }) => {
     {
       variables: {
         productID: createdProductID,
+        //strategy: REMOVE_STANDALONE_VARIANT,
         variantsInput: variantsToCreate,
        },
     }

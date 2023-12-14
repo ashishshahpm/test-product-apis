@@ -30,9 +30,9 @@ export const action = async ({ request }) => {
   ];
   
  // assigning values for the options and their values 
-  const color = ["Red", "Green", "Blue", "Black", "Brown", "White"];
-  const size = ["XS", "S", "M", "L", "XL", "XXL"];
-  const length = ["7", "8", "9", "10", "11", "12"];
+  const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet"];
+  const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46"];
+  const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36"];
 
   const colorOption = {
     "name": "Color",
@@ -68,13 +68,13 @@ export const action = async ({ request }) => {
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = 216;
+  const numVariants = 1728;
   const variantsToCreate = [];
   let i = 0;
   while (i < numVariants) {
-    colorPointer = Math.floor (i/36);
-    sizePointer = Math.floor (i/6)%6;
-    lengthPointer = i%6;
+    colorPointer = Math.floor (i/144);
+    sizePointer = Math.floor (i/12)%12;
+    lengthPointer = i%12;
     variantObject =  {
       "price": i+1,
       "optionValues": [
@@ -181,6 +181,36 @@ export const action = async ({ request }) => {
   const responseJson = await response.json();
   const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
 
+/*  const promises = [];
+  for (let i = 0; i < 6; i++) {
+    promises.push(admin.graphql(
+      mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+        productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+          product {
+            id
+            title
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  price
+                  barcode
+                  createdAt
+                }
+              }
+            }
+          }
+        }
+      },
+    variables: {
+      productID: createdProductID,
+      strategy: "REMOVE_STANDALONE_VARIANT",
+      variantsInput: variantsToCreate.slice(i*250,i+250), // Replace with your dynamic variants data
+    },
+  ))};
+const responses = await Promise.all(promises);
+*/
+
   // Add variants to the product
   const responseWithVariants = await admin.graphql (
     `#graphql
@@ -207,12 +237,12 @@ export const action = async ({ request }) => {
       variables: {
         productID: createdProductID,
         strategy: "REMOVE_STANDALONE_VARIANT",
-        variantsInput: variantsToCreate,
+        variantsInput: variantsToCreate.slice(0,250),
        },
     }
 
   );
-  
+ 
   const responseWithVariantsJson = await responseWithVariants.json();
   // Return the product variants data in JSON format
   return json({ productVariants: responseWithVariantsJson.data.productVariantsBulkCreate.product });

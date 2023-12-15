@@ -170,7 +170,7 @@ export const action = async ({ request }) => {
         input: {
           title: `${material} Pants`,
           //variants: [{ price: Math.random() * 100 }],
-          "optionValues": optionArray
+          "productOptions": optionArray
         },
       },
 //      version: '2023-10', // Specify the desired API version here

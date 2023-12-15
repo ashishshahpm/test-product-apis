@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://maybe-leasing-cameron-people.trycloudflare.com"
+application_url = "https://grams-poison-routing-painting.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://maybe-leasing-cameron-people.trycloudflare.com/auth/callback",
-  "https://maybe-leasing-cameron-people.trycloudflare.com/auth/shopify/callback",
-  "https://maybe-leasing-cameron-people.trycloudflare.com/api/auth/callback",
-  "https://maybe-leasing-cameron-people.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://grams-poison-routing-painting.trycloudflare.com/auth/callback",
+  "https://grams-poison-routing-painting.trycloudflare.com/auth/shopify/callback",
+  "https://grams-poison-routing-painting.trycloudflare.com/api/auth/callback",
+  "https://grams-poison-routing-painting.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

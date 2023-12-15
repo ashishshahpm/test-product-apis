@@ -212,7 +212,7 @@ const responses = await Promise.all(promises);
 */
 
   // Add variants to the product
-  const responseWithVariants = await admin.graphql (
+  let responseWithVariants = await admin.graphql (
     `#graphql
     mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
       productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
@@ -236,13 +236,209 @@ const responses = await Promise.all(promises);
     {
       variables: {
         productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
         strategy: "REMOVE_STANDALONE_VARIANT",
         variantsInput: variantsToCreate.slice(0,250),
        },
     }
 
   );
+
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(250,500),
+       },
+    }
+
+  ); 
  
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(500,750),
+       },
+    }
+
+  ); 
+
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(750,1000),
+       },
+    }
+
+  ); 
+
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(1000,1250),
+       },
+    }
+
+  ); 
+
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(1250,1500),
+       },
+    }
+
+  ); 
+
+  responseWithVariants = await admin.graphql (
+    `#graphql
+    mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
+      productVariantsBulkCreate(productId: $productID, strategy: $strategy, variants: $variantsInput) {
+        product {
+          id
+          title
+          variants(first: 10) {
+            edges {
+              node {
+                id
+                price
+                barcode
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    }`,
+
+    {
+      variables: {
+        productID: createdProductID,
+       // productID: "gid://shopify/Product/7849094021272",
+        strategy: "REMOVE_STANDALONE_VARIANT",
+        variantsInput: variantsToCreate.slice(1500,i),
+       },
+    }
+
+  ); 
+
+
+  console.log (i)
+  console.log(createdProductID)
   const responseWithVariantsJson = await responseWithVariants.json();
   // Return the product variants data in JSON format
   return json({ productVariants: responseWithVariantsJson.data.productVariantsBulkCreate.product });

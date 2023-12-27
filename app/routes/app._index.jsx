@@ -25,14 +25,14 @@ export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
  
 // Assingning material of the product that will be used in its title
-  const material = ["Cotton", "Nylon", "Wool", "Hybrid"][
-    Math.floor(Math.random() * 4)
+  const material = ["Cotton", "Nylon", "Wool", "Hybrid", "Polyester", "Jute", "Synthetic"][
+    Math.floor(Math.random() * 7)
   ];
   
  // assigning values for the options and their values 
-  const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet"];
-  const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46"];
-  const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36"];
+  const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet", "Rainbow"];
+  const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
+  const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36", "37"];
 
   const colorOption = {
     "name": "Color",
@@ -60,7 +60,6 @@ export const action = async ({ request }) => {
         { "name": length[2] }
       ]
   }
-  const numOptionValues = Math.floor(Math.random()*3);
 
 // creating the optionValues variable that will be used in the productCreate mutation
     const optionArray = [colorOption, sizeOption, lengthOption];
@@ -68,13 +67,17 @@ export const action = async ({ request }) => {
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = 1728;
+  const numVariants = Math.floor(Math.random() * 2000);
+  //const numVariants = 1875
+  const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
+  console.log('Number of options values per option is:' , numOptionValues)
+
   const variantsToCreate = [];
   let i = 0;
   while (i < numVariants) {
-    colorPointer = Math.floor (i/144);
-    sizePointer = Math.floor (i/12)%12;
-    lengthPointer = i%12;
+    colorPointer = Math.floor (i/(numOptionValues*numOptionValues));
+    sizePointer = Math.floor (i/numOptionValues)%numOptionValues;
+    lengthPointer = i%numOptionValues;
     variantObject =  {
       "price": i+1,
       "optionValues": [
@@ -86,52 +89,8 @@ export const action = async ({ request }) => {
     variantsToCreate.push(variantObject);
     i++;
   }
-/*
-  const variantsToCreate = [
-    {
-      "price": 1,
-      "optionValues": [
-        {"name": color[0], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"},
-        {"name": fit[1], "optionName": "Fit"}
-      ]
-    },
-    {
-      "price": 2,
-      "optionValues": [
-        {"name": color[0], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"},
-        {"name": fit[2], "optionName": "Fit"}
+  console.log (variantObject)
 
-      ]
-    },
-    {
-      "price": 3,
-      "optionValues": [
-        {"name": color[1], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"},
-        {"name": fit[0], "optionName": "Fit"}
-      ]
-    },
-    {
-      "price": 4,
-      "optionValues": [
-        {"name": color[1], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"},
-        {"name": fit[1], "optionName": "Fit"}
-      ]
-    },
-    {
-      "price": 5,
-      "optionValues": [
-        {"name": color[1], "optionName": "Color"},
-        {"name": size[0], "optionName": "Size"},
-        {"name": fit[2], "optionName": "Fit"}
-      ]
-    }
-  ];
-*/
-  
   // calls the productCreate mutation
   const response = await admin.graphql(
     `#graphql
@@ -181,10 +140,17 @@ export const action = async ({ request }) => {
   const responseJson = await response.json();
   const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
 
-
+  const mutationLoops =  Math.floor(numVariants/250);
+  let k;
   // Add variants to the product
   let responseWithVariants
-  for (let j=0; j< 6; j++) {
+  for (let j=0; j< mutationLoops+1; j++) {
+    if (numVariants - j*250 < 250) {
+      k = numVariants - j*250
+    }
+    else k = 250
+    console.log (j)
+    console.log (k)
     responseWithVariants = await admin.graphql (
       `#graphql
       mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
@@ -209,16 +175,16 @@ export const action = async ({ request }) => {
       {
         variables: {
           productID: createdProductID,
-         // productID: "gid://shopify/Product/7849094021272",
           strategy: "REMOVE_STANDALONE_VARIANT",
-          variantsInput: variantsToCreate.slice(j*250,j*250+250),
+          variantsInput: variantsToCreate.slice(j*250,j*250+k),
          },
       }
   
     );
   }
 
-  console.log (i)
+  //console.log (i)
+  console.log ('Number of variants to be created is:', numVariants)
   console.log(createdProductID)
   const responseWithVariantsJson = await responseWithVariants.json();
   // Return the product variants data in JSON format

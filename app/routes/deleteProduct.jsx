@@ -12,6 +12,7 @@ export const action = async ({ request }) => {
 
     const formData = await request.formData();
     prodID = formData.get('prodID')
+    ProductGIDToDelete = "gid://shopify/Product/" + prodID
     const response = await admin.graphql(
         `mutation productDelete($input: ProductDeleteInput!) {
           productDelete(input: $input) {
@@ -25,7 +26,7 @@ export const action = async ({ request }) => {
         {
           variables: {
             "input": {
-              "id": "gid://shopify/Product/7856809803928"
+              "id": ProductGIDToDelete
             }
           },
         }

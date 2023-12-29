@@ -15,6 +15,7 @@ import {
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
+
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
   return null;
@@ -194,6 +195,35 @@ export const action = async ({ request }) => {
 
 };    
 
+// Code that deletes a specified Product
+export const handleDeleteProduct = async ({ request }) => {
+  console.log('I am here in delete function')
+  const { admin } = await authenticate.admin(request);
+  const response = await admin.graphql(
+    `mutation productDelete($input: ProductDeleteInput!) {
+      productDelete(input: $input) {
+        deletedProductId
+        userErrors {
+          field
+          message
+        }
+      }`,
+    {
+      variables: {
+        "input": {
+          "id": "gid://shopify/Product/7856809803928"
+        }
+      },
+    }
+  );
+
+    // Handle successful deletion (e.g., update UI, display success message)
+    console.log("Product deleted successfully!");
+    // Reset UI state and variables
+    actionData.productVariants = null;
+    // ... other UI updates ...
+  };
+
 export default function Index() {
   const nav = useNavigation();
   const actionData = useActionData();
@@ -211,7 +241,9 @@ export default function Index() {
       shopify.toast.show("Product created");
     }
   }, [actionData?.productVariants]);
+  
   const generateProduct = () => submit({}, { replace: true, method: "POST" });
+  const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: "./handleDeleteProduct"});
 
   return (
     <Page>
@@ -276,8 +308,8 @@ export default function Index() {
                     Generate a product
                   </Button>
 
-                  <Button loading={isLoading} onClick={generateProduct}>
-                    Modify a product
+                  <Button loading={isLoading} onClick={handleDeleteProduct}>
+                    Delete a product
                   </Button>
                   
                   {actionData?.productVariants && (

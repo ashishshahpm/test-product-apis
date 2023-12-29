@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://carey-belle-origins-cm.trycloudflare.com"
+application_url = "https://photoshop-devoted-marcus-omaha.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://carey-belle-origins-cm.trycloudflare.com/auth/callback",
-  "https://carey-belle-origins-cm.trycloudflare.com/auth/shopify/callback",
-  "https://carey-belle-origins-cm.trycloudflare.com/api/auth/callback",
-  "https://carey-belle-origins-cm.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://photoshop-devoted-marcus-omaha.trycloudflare.com/auth/callback",
+  "https://photoshop-devoted-marcus-omaha.trycloudflare.com/auth/shopify/callback",
+  "https://photoshop-devoted-marcus-omaha.trycloudflare.com/api/auth/callback",
+  "https://photoshop-devoted-marcus-omaha.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

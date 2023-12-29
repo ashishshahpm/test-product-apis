@@ -195,7 +195,7 @@ export const action = async ({ request }) => {
 
 };    
 
-// Code that deletes a specified Product
+/* Code that deletes a specified Product
 export const handleDeleteProduct = async ({ request }) => {
   console.log('I am here in delete function')
   const { admin } = await authenticate.admin(request);
@@ -223,7 +223,7 @@ export const handleDeleteProduct = async ({ request }) => {
     actionData.productVariants = null;
     // ... other UI updates ...
   };
-
+*/
 export default function Index() {
   const nav = useNavigation();
   const actionData = useActionData();
@@ -243,7 +243,7 @@ export default function Index() {
   }, [actionData?.productVariants]);
   
   const generateProduct = () => submit({}, { replace: true, method: "POST" });
-  const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: "./handleDeleteProduct"});
+  //const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: "./handleDeleteProduct"});
 
   return (
     <Page>
@@ -308,7 +308,7 @@ export default function Index() {
                     Generate a product
                   </Button>
 
-                  <Button loading={isLoading} onClick={handleDeleteProduct}>
+                  <Button loading={isLoading} onClick={generateProduct}>
                     Delete a product
                   </Button>
                   

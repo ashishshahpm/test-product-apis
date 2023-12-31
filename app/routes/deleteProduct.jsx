@@ -27,7 +27,8 @@ export const action = async ({ request }) => {
           variables: {
             "input": {
               "id": ProductGIDToDelete
-            }
+            //  "id": "gid://shopify/Product/7856851583128"
+          }
           },
         }
       );

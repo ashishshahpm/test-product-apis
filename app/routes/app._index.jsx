@@ -15,6 +15,7 @@ import {
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
+import { deleteProduct } from "./deleteSpecificProduct.jsx"
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -195,35 +196,7 @@ export const action = async ({ request }) => {
 
 };    
 
-/* Code that deletes a specified Product
-export const handleDeleteProduct = async ({ request }) => {
-  console.log('I am here in delete function')
-  const { admin } = await authenticate.admin(request);
-  const response = await admin.graphql(
-    `mutation productDelete($input: ProductDeleteInput!) {
-      productDelete(input: $input) {
-        deletedProductId
-        userErrors {
-          field
-          message
-        }
-      }`,
-    {
-      variables: {
-        "input": {
-          "id": "gid://shopify/Product/7856809803928"
-        }
-      },
-    }
-  );
 
-    // Handle successful deletion (e.g., update UI, display success message)
-    console.log("Product deleted successfully!");
-    // Reset UI state and variables
-    actionData.productVariants = null;
-    // ... other UI updates ...
-  };
-*/
 export default function Index() {
   const nav = useNavigation();
   const actionData = useActionData();
@@ -243,7 +216,7 @@ export default function Index() {
   }, [actionData?.productVariants]);
   
   const generateProduct = () => submit({}, { replace: true, method: "POST" });
-  //const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: "./handleDeleteProduct"});
+ // const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: ./deleteProduct});
 
   return (
     <Page>
@@ -308,9 +281,16 @@ export default function Index() {
                     Generate a product
                   </Button>
 
-                  <Button loading={isLoading} onClick={generateProduct}>
+                  <Button loading={isLoading} onClick={() => submit("deleteProduct", { method: "POST" })}>
                     Delete a product
                   </Button>
+
+                  <Button 
+                    url = {`https://ashishtest-extendedvariants.myshopify.com/admin/apps/test-product-apis/deleteProduct`}
+
+                    >
+                      Delete product form
+                    </Button>
                   
                   {actionData?.productVariants && (
                     <Button

@@ -15,7 +15,6 @@ import {
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
-import { deleteProduct } from "./deleteSpecificProduct.jsx"
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -69,7 +68,7 @@ export const action = async ({ request }) => {
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = Math.floor(Math.random() * 2000);
+  const numVariants = Math.floor(Math.random() * 100);
   //const numVariants = 1875
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   console.log('Number of options values per option is:' , numOptionValues)
@@ -216,7 +215,6 @@ export default function Index() {
   }, [actionData?.productVariants]);
   
   const generateProduct = () => submit({}, { replace: true, method: "POST" });
- // const handleDeleteProduct = () => submit ({}, {replace: true, method: "POST", route: ./deleteProduct});
 
   return (
     <Page>
@@ -281,13 +279,8 @@ export default function Index() {
                     Generate a product
                   </Button>
 
-                  <Button loading={isLoading} onClick={() => submit("deleteProduct", { method: "POST" })}>
-                    Delete a product
-                  </Button>
-
                   <Button 
                     url = {`https://ashishtest-extendedvariants.myshopify.com/admin/apps/test-product-apis/deleteProduct`}
-
                     >
                       Delete product form
                     </Button>

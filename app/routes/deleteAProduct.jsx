@@ -7,8 +7,12 @@ export const loader = async ({ request }) => {
     return null;
   };
 
-export const action = async ({ request }) => {
+export default async function action({request}) {
     const { admin } = await authenticate.admin(request);
+
+   // const formData = await request.formData();
+   // prodID = formData.get('prodID')
+   // ProductGIDToDelete = "gid://shopify/Product/" + prodID
     const response = await admin.graphql(
         `mutation productDelete($input: ProductDeleteInput!) {
           productDelete(input: $input) {
@@ -28,6 +32,17 @@ export const action = async ({ request }) => {
           },
         }
       );
+    return json({ message: "Product deleted successfully" });
 
-    return json({ message: "Product deleted successfully!" });
 }
+
+/*export default function deleteAProduct() {
+    console.log ("I am in the delete function")
+    // const loaderData = useLoaderData();
+     const actionData = useActionData();
+    // console.log (actionData)
+    // const productToDeleteID = actionData?.prodID || '';
+    // console.log (productToDeleteID)
+     return {"message": "What is this?"}
+ }
+ */

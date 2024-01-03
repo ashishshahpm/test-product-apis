@@ -26,8 +26,8 @@ export const action = async ({ request }) => {
         {
           variables: {
             "input": {
-              "id": ProductGIDToDelete
-            //  "id": "gid://shopify/Product/7856851583128"
+            //  "id": ProductGIDToDelete
+              "id": "gid://shopify/Product/7858345083032"
           }
           },
         }
@@ -38,6 +38,7 @@ export const action = async ({ request }) => {
 export default function deleteProduct() {
    // const loaderData = useLoaderData();
     const actionData = useActionData();
+    console.log ("I am here in Delete");
     console.log (actionData)
     const productToDeleteID = actionData?.prodID || '';
     console.log (productToDeleteID)

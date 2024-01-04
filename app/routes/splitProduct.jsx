@@ -12,8 +12,9 @@ export const action = async ({ request }) => {
     const formData = await request.formData();
     prodID = formData.get('prodID')
     ProductGIDToSplit = "gid://shopify/Product/" + prodID
-    ProductGIDToSplit2 = `"`+ ProductGIDToSplit + `"`
-    console.log(ProductGIDToSplit2)
+    //ProductGIDToSplit2 = `"`+ ProductGIDToSplit + `"`
+    //console.log(ProductGIDToSplit2)
+    
     //Code to find out how many option values the product has
     const responseQuery = await admin.graphql(
       `query getOptions {
@@ -32,6 +33,11 @@ export const action = async ({ request }) => {
     const originalArray = responseQueryJson.data.product.options[0].optionValues
     const firstOptionValues = originalArray.map(item => item.name);
     console.log(firstOptionValues)
+
+    //variables to hold the value of the new IDs for duplicated products and their first option
+    const splitProductID = [];
+    const splitProductOptionID = [];
+
     //Code to create as many duplicates as option values
     for (let j=0; j< firstOptionValues.length; j++) {  
     productTitle = "Duplicated Product" + j
@@ -41,6 +47,10 @@ export const action = async ({ request }) => {
               newProduct {
                 id
                 title
+                options {
+                  id
+                  name
+                }
               }
               userErrors {
                 field
@@ -56,7 +66,52 @@ export const action = async ({ request }) => {
             }
           }
         );
+
+        const responseJSON = await response.json();
+     // console.log (responseJSON);
+
+        splitProductID[j] = responseJSON.data.productDuplicate.newProduct.id
+        splitProductOptionID[j] = responseJSON.data.productDuplicate.newProduct.options[0].id
+        
+     // Return the product variants data in JSON format
+     //const originalArray = responseJson.data.product.options[0].optionValues
+     //const firstOptionValues = originalArray.map(item => item.name);
+     //console.log(firstOptionValues)
       }
+      console.log(splitProductID)
+      console.log(splitProductOptionID)
+
+      for (let j=0; j< firstOptionValues.length; j++) {  
+          const responseDelete = await admin.graphql(
+              `mutation splitOptionDelete($options: [ID!]!, $productId: ID!, $strategy: ProductOptionDeleteStrategy!) {
+                productOptionsDelete(options: $options, productId: $productId, strategy: $strategy) {
+                  deletedOptionsIds
+                  product {
+                     id
+                    options {
+                      id
+                      name
+                    }
+                  }
+                  userErrors {
+                    field
+                    message
+                  }
+                }
+              } `,
+              {
+                variables: {
+                  "options": [
+                    splitProductOptionID[j]
+                  ],
+                  "productId": splitProductID[j],
+                  "strategy": "POSITION"
+                }
+              }
+            );
+          }
+  
+
     return Object.fromEntries(formData.entries())
 }
 

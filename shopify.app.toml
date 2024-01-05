@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://ent-cayman-nintendo-competitors.trycloudflare.com"
+application_url = "https://secret-flood-fears-colored.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ent-cayman-nintendo-competitors.trycloudflare.com/auth/callback",
-  "https://ent-cayman-nintendo-competitors.trycloudflare.com/auth/shopify/callback",
-  "https://ent-cayman-nintendo-competitors.trycloudflare.com/api/auth/callback",
-  "https://ent-cayman-nintendo-competitors.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://secret-flood-fears-colored.trycloudflare.com/auth/callback",
+  "https://secret-flood-fears-colored.trycloudflare.com/auth/shopify/callback",
+  "https://secret-flood-fears-colored.trycloudflare.com/api/auth/callback",
+  "https://secret-flood-fears-colored.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

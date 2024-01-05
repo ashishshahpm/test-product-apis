@@ -12,35 +12,42 @@ export const action = async ({ request }) => {
     const formData = await request.formData();
     prodID = formData.get('prodID')
     ProductGIDToSplit = "gid://shopify/Product/" + prodID
-    //ProductGIDToSplit2 = `"`+ ProductGIDToSplit + `"`
-    //console.log(ProductGIDToSplit2)
     
     //Code to find out how many option values the product has
     const responseQuery = await admin.graphql(
-      `query getOptions {
-        product (id:"gid://shopify/Product/7860868087960") {
-         options {
-           name
-          optionValues {
+      `query getOptions($productId: ID!) {
+        product(id: $productId) {
+          title
+          options {
             name
+            optionValues {
+              name
+            }
           }
-         } 
         }
-      }`
-    ) 
+      }`,
+      {
+        variables: {
+          productId: ProductGIDToSplit
+        }
+      }
+    );
+
     const responseQueryJson = await responseQuery.json();
+
   // Return the product variants data in JSON format
+    const prodName = responseQueryJson.data.product.title
     const originalArray = responseQueryJson.data.product.options[0].optionValues
     const firstOptionValues = originalArray.map(item => item.name);
-    console.log(firstOptionValues)
-
+   // console.log(firstOptionValues)
+    console.log (prodName)
     //variables to hold the value of the new IDs for duplicated products and their first option
     const splitProductID = [];
     const splitProductOptionID = [];
 
     //Code to create as many duplicates as option values
     for (let j=0; j< firstOptionValues.length; j++) {  
-    productTitle = "Duplicated Product" + j
+    productTitle = prodName + j
       const response = await admin.graphql(
           `mutation productDuplicate ($newTitle: String!, $productId: ID!) {
             productDuplicate(newTitle: $newTitle, productId: $productId) {
@@ -72,14 +79,9 @@ export const action = async ({ request }) => {
 
         splitProductID[j] = responseJSON.data.productDuplicate.newProduct.id
         splitProductOptionID[j] = responseJSON.data.productDuplicate.newProduct.options[0].id
-        
-     // Return the product variants data in JSON format
-     //const originalArray = responseJson.data.product.options[0].optionValues
-     //const firstOptionValues = originalArray.map(item => item.name);
-     //console.log(firstOptionValues)
       }
-      console.log(splitProductID)
-      console.log(splitProductOptionID)
+     // console.log(splitProductID)
+     // console.log(splitProductOptionID)
 
       for (let j=0; j< firstOptionValues.length; j++) {  
           const responseDelete = await admin.graphql(

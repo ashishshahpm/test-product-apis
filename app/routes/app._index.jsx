@@ -95,8 +95,8 @@ export const action = async ({ request }) => {
   // calls the productCreate mutation
   const response = await admin.graphql(
     `#graphql
-      mutation populateProduct($input: ProductInput!) {
-        productCreate(input: $input) {
+      mutation populateProduct($input: ProductInput!, $mediaInput: [CreateMediaInput!]!) {
+        productCreate(input: $input, media: $mediaInput) {
           product {
             id
             title
@@ -129,9 +129,35 @@ export const action = async ({ request }) => {
       variables: {
         input: {
           title: `${material} Pants`,
-          //variants: [{ price: Math.random() * 100 }],
           "productOptions": optionArray
         },
+        mediaInput: [
+            {
+              "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+              "alt": "Bike scenic",
+              "mediaContentType": "IMAGE"
+            },
+            {
+              "originalSource": "https://super73.com/cdn/shop/files/SUPER73_In-Stock-Bikes_DesktopHero_06_1920x1080_88b91b74-161f-4217-ac58-30f6f38c282a.jpg?v=1704237874&width=3000",
+              "alt": "Bike driving",
+              "mediaContentType": "IMAGE"
+            },
+            {
+              "originalSource": "https://www.motorcyclistonline.com/resizer/wJwyoxEWfQHl6Im39g_Y4OpGbHI=/1440x0/filters:focal(712x394:722x404)/cloudfront-us-east-1.images.arcpublishing.com/octane/Y2NSC7AJEBBRZNOPUZZ3W25BPE.jpg",
+              "alt": "Bike stock",
+              "mediaContentType": "IMAGE"
+            },
+            {
+              "originalSource": "https://www.motorcyclistonline.com/resizer/bP-PiZaMqiHlzECKumDeNrqpDF4=/1440x0/filters:focal(709x485:719x495)/cloudfront-us-east-1.images.arcpublishing.com/octane/IDUJXT35CVDRHKRW4RHZV5KTGI.jpg",
+              "alt": "Bike stock again",
+              "mediaContentType": "IMAGE"
+            },
+            {
+              "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+              "alt": "Bike scenic",
+              "mediaContentType": "IMAGE"
+            },
+        ]
       },
 //      version: '2023-10', // Specify the desired API version here
     }

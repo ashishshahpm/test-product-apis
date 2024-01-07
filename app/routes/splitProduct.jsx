@@ -47,7 +47,7 @@ export const action = async ({ request }) => {
 
     //Code to create as many duplicates as option values
     for (let j=0; j< firstOptionValues.length; j++) {  
-    productTitle = prodName + j
+    productTitle = prodName + "-" + firstOptionValues[j]
       const response = await admin.graphql(
           `mutation productDuplicate ($newTitle: String!, $productId: ID!) {
             productDuplicate(newTitle: $newTitle, productId: $productId) {

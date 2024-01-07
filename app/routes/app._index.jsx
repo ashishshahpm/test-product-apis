@@ -15,6 +15,8 @@ import {
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
+import mediadata from "../data/mediadata.js"
+import mediatdata from "../data/mediadata.js";
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -31,36 +33,10 @@ export const action = async ({ request }) => {
   ];
   
  // assigning values for the options and their values 
-  const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet", "Rainbow"];
-  const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
-  const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36", "37"];
-  const images = [
-    {
-      "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
-      "alt": "Bike scenic",
-      "mediaContentType": "IMAGE"
-    },
-    {
-      "originalSource": "https://super73.com/cdn/shop/files/SUPER73_In-Stock-Bikes_DesktopHero_06_1920x1080_88b91b74-161f-4217-ac58-30f6f38c282a.jpg?v=1704237874&width=3000",
-      "alt": "Bike driving",
-      "mediaContentType": "IMAGE"
-    },
-    {
-      "originalSource": "https://www.motorcyclistonline.com/resizer/wJwyoxEWfQHl6Im39g_Y4OpGbHI=/1440x0/filters:focal(712x394:722x404)/cloudfront-us-east-1.images.arcpublishing.com/octane/Y2NSC7AJEBBRZNOPUZZ3W25BPE.jpg",
-      "alt": "Bike stock",
-      "mediaContentType": "IMAGE"
-    },
-    {
-      "originalSource": "https://www.motorcyclistonline.com/resizer/bP-PiZaMqiHlzECKumDeNrqpDF4=/1440x0/filters:focal(709x485:719x495)/cloudfront-us-east-1.images.arcpublishing.com/octane/IDUJXT35CVDRHKRW4RHZV5KTGI.jpg",
-      "alt": "Bike stock again",
-      "mediaContentType": "IMAGE"
-    },
-    {
-      "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
-      "alt": "Bike scenic",
-      "mediaContentType": "IMAGE"
-    }
-  ] 
+  const color = mediadata("color");
+  const size = mediadata ("size")
+  const length = mediadata("length")
+  const images = mediadata("images");
 
   const colorOption = {
     "name": "Color",
@@ -90,13 +66,12 @@ export const action = async ({ request }) => {
   }
 
 // creating the optionValues variable that will be used in the productCreate mutation
-    const optionArray = [colorOption, sizeOption, lengthOption];
+  const optionArray = [colorOption, sizeOption, lengthOption];
 
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
   const numVariants = Math.floor(Math.random() * 100);
-  //const numVariants = 1875
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   console.log('Number of options values per option is:' , numOptionValues)
 
@@ -117,7 +92,6 @@ export const action = async ({ request }) => {
     variantsToCreate.push(variantObject);
     i++;
   }
-  console.log (variantObject)
 
   // calls the productCreate mutation
   const response = await admin.graphql(

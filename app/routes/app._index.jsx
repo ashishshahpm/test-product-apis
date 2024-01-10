@@ -15,8 +15,7 @@ import {
 } from "@shopify/polaris";
 
 import { authenticate } from "../shopify.server";
-import mediadata from "../data/mediadata.js"
-import mediatdata from "../data/mediadata.js";
+import productdata from "../data/productdata.js"
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -33,10 +32,18 @@ export const action = async ({ request }) => {
   ];
   
  // assigning values for the options and their values 
-  const color = mediadata("color");
-  const size = mediadata ("size")
-  const length = mediadata("length")
-  const images = mediadata("images");
+ const colorPromise = productdata("color");
+ const sizePromise = productdata("size");
+ const lengthPromise = productdata("length");
+ const titlePromise = productdata("title");
+ const imagesPromise = productdata("images");
+
+
+ const images = await imagesPromise;
+ const color = await colorPromise;
+ const size = await sizePromise;
+ const length = await lengthPromise;
+ const productTitle = await titlePromise;
 
   const colorOption = {
     "name": "Color",
@@ -130,6 +137,7 @@ export const action = async ({ request }) => {
       variables: {
         input: {
           title: `${material} Pants`,
+          descriptionHtml: productTitle,
           "productOptions": optionArray
         },
         mediaInput: images

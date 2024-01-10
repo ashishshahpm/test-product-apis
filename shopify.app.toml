@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://lounge-quiz-sent-phd.trycloudflare.com"
+application_url = "https://reynolds-coffee-ranges-grid.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://lounge-quiz-sent-phd.trycloudflare.com/auth/callback",
-  "https://lounge-quiz-sent-phd.trycloudflare.com/auth/shopify/callback",
-  "https://lounge-quiz-sent-phd.trycloudflare.com/api/auth/callback",
-  "https://lounge-quiz-sent-phd.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://reynolds-coffee-ranges-grid.trycloudflare.com/auth/callback",
+  "https://reynolds-coffee-ranges-grid.trycloudflare.com/auth/shopify/callback",
+  "https://reynolds-coffee-ranges-grid.trycloudflare.com/api/auth/callback",
+  "https://reynolds-coffee-ranges-grid.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

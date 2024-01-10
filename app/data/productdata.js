@@ -1,4 +1,12 @@
-export default function mediatdata(dataType) {
+import OpenAI from "openai";
+const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
+//const apiKey = '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';
+
+// Set up the OpenAI API client
+//const client = new openai.OpenAI({ apiKey });
+
+
+export default async function mediatdata(dataType) {
     const dataRequested = dataType
     const images = [
         {
@@ -84,8 +92,17 @@ export default function mediatdata(dataType) {
           return size; 
         case 'length':
           return length; 
-        default:
-          return 'Invalid data requested';
+        case 'title':{
+          const completion = await openai.chat.completions.create({
+            messages: [{"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "Can you generate a description for a Pant product?"},
+                {"role": "assistant", "content": "Pants that you never want to get out off"}],
+            model: "gpt-3.5-turbo",
+          });        
+          const generatedTitle = completion.choices[0].message.content;
+          return generatedTitle;
+        }
+          default:
+            return 'Invalid data requested';
       }
-    return (images)
  }

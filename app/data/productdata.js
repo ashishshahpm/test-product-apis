@@ -1,6 +1,9 @@
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
-//const apiKey = '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';
+//require('dotenv').config();
+//const apiKey = process.env.OPENAI_API_KEY;
+//const openai = new OpenAI({ apiKey });
+
+const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
 
 // Set up the OpenAI API client
 //const client = new openai.OpenAI({ apiKey });
@@ -8,6 +11,11 @@ const openai = new OpenAI({ apiKey: 'sk-wUjMlOUFJjbMnqSdWTliT3BlbkFJ5r2qTxURgbhj
 
 export default async function mediatdata(dataType) {
     const dataRequested = dataType
+    // Assingning material of the product that will be used in its title
+    const material = ["Cotton", "Nylon", "Wool", "Hybrid", "Polyester", "Jute", "Synthetic"][
+    Math.floor(Math.random() * 7)];
+    const title = `${material} Pants`
+
     const images = [
         {
           "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
@@ -83,7 +91,48 @@ export default async function mediatdata(dataType) {
     const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet", "Rainbow"];
     const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
     const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36", "37"];
+    
+    const colorOption = {
+      "name": "Color",
+      "values": [
+        { "name": color[0] }
+      ]
+    }
+  
+    const sizeOption = {
+      "name": "Size",
+        "values": [
+          { "name": size[0] }
+        ]
+    }
+  
+    const lengthOption = {
+      "name": "Length",
+        "values": [
+          { "name": length[0] }
+        ]
+    }
+
+// creating the optionValues variable that will be used in the productCreate mutation
+  const optionArray = [colorOption, sizeOption, lengthOption];
+
+  const completion = await openai.chat.completions.create({
+    messages: [{"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Can you generate a short 4 line description for a Pant product?"},
+        {"role": "assistant", "content": "Pants that you never want to get out off"}],
+    model: "gpt-3.5-turbo",
+  });        
+  const description = completion.choices[0].message.content;
+  const productInput = 
+  {
+     "title": title,
+      "descriptionHtml": description,
+      "productOptions": optionArray
+  }
+
     switch (dataRequested) {
+        case 'input':
+          return productInput;
         case 'images':
           return images; 
         case 'color':
@@ -92,16 +141,6 @@ export default async function mediatdata(dataType) {
           return size; 
         case 'length':
           return length; 
-        case 'title':{
-          const completion = await openai.chat.completions.create({
-            messages: [{"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Can you generate a description for a Pant product?"},
-                {"role": "assistant", "content": "Pants that you never want to get out off"}],
-            model: "gpt-3.5-turbo",
-          });        
-          const generatedTitle = completion.choices[0].message.content;
-          return generatedTitle;
-        }
           default:
             return 'Invalid data requested';
       }

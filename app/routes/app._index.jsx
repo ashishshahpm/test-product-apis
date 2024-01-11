@@ -25,55 +25,22 @@ export const loader = async ({ request }) => {
 // Code that executes when Generate Product is clicked
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
- 
-// Assingning material of the product that will be used in its title
-  const material = ["Cotton", "Nylon", "Wool", "Hybrid", "Polyester", "Jute", "Synthetic"][
-    Math.floor(Math.random() * 7)
-  ];
   
  // assigning values for the options and their values 
  const colorPromise = productdata("color");
  const sizePromise = productdata("size");
  const lengthPromise = productdata("length");
- const titlePromise = productdata("title");
- const imagesPromise = productdata("images");
-
-
- const images = await imagesPromise;
+ 
  const color = await colorPromise;
  const size = await sizePromise;
  const length = await lengthPromise;
- const productTitle = await titlePromise;
 
-  const colorOption = {
-    "name": "Color",
-    "values": [
-      { "name": color[0] },
-      { "name": color[1] },
-      { "name": color[2] }
-    ]
-  }
+// setting up the inputs for the productCreate mutation
+ const imagesPromise = productdata("images");
+ const inputPromise = productdata("input");
 
-  const sizeOption = {
-    "name": "Size",
-      "values": [
-        { "name": size[0] },
-        { "name": size[1] },
-        { "name": size[2] }
-      ]
-  }
-
-  const lengthOption = {
-    "name": "Length",
-      "values": [
-        { "name": length[0] },
-        { "name": length[1] },
-        { "name": length[2] }
-      ]
-  }
-
-// creating the optionValues variable that will be used in the productCreate mutation
-  const optionArray = [colorOption, sizeOption, lengthOption];
+ const images = await imagesPromise;
+ const productInput = await inputPromise
 
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
@@ -135,11 +102,7 @@ export const action = async ({ request }) => {
       }`,
     {
       variables: {
-        input: {
-          title: `${material} Pants`,
-          descriptionHtml: productTitle,
-          "productOptions": optionArray
-        },
+        input: productInput,
         mediaInput: images
       },
 //      version: '2023-10', // Specify the desired API version here

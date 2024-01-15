@@ -45,7 +45,7 @@ export const action = async ({ request }) => {
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
   //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = Math.floor(Math.random() * 100);
+  const numVariants = Math.floor(Math.random() * 10);
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   console.log('Number of options values per option is:' , numOptionValues)
 

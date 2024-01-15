@@ -1,21 +1,11 @@
 import OpenAI from "openai";
-//require('dotenv').config();
-//const apiKey = process.env.OPENAI_API_KEY;
-//const openai = new OpenAI({ apiKey });
-
-const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
-
-// Set up the OpenAI API client
-//const client = new openai.OpenAI({ apiKey });
-
+const openai = new OpenAI({ apiKey: '', dangerouslyAllowBrowser: true });
 
 export default async function mediatdata(dataType) {
     const dataRequested = dataType
-    // Assingning material of the product that will be used in its title
-    const material = ["Cotton", "Nylon", "Wool", "Hybrid", "Polyester", "Jute", "Synthetic"][
-    Math.floor(Math.random() * 7)];
+    const randomSeed = Math.random();
+    const material = ["Cotton","Denim","Polyester","Wool","Linen","Silk","Rayon","Nylon","Spandex","Leather","Velvet","Corduroy","Twill","Chiffon","Satin","Canvas","Suede","Polyurethane","Acrylic","Cashmere"][Math.floor(randomSeed * 20)];
     const title = `${material} Pants`
-
     const images = [
         {
           "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
@@ -86,7 +76,7 @@ export default async function mediatdata(dataType) {
         "originalSource": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKqM__N6SzXVWlBAEqRh092jGGrkjEoS00lA&usqp=CAU",
         "mediaContentType": "IMAGE"
         }
-      ] 
+      ].slice(0, Math.floor(randomSeed*16)) 
 
     const color = ["Red", "Green", "Blue", "Black", "Brown", "White", "Pink", "Purple", "Magenta", "Orange", "Yellow", "Violet", "Rainbow"];
     const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
@@ -114,22 +104,83 @@ export default async function mediatdata(dataType) {
     }
 
 // creating the optionValues variable that will be used in the productCreate mutation
-  const optionArray = [colorOption, sizeOption, lengthOption];
-
+  const optionArray = [colorOption, sizeOption, lengthOption]; 
   const completion = await openai.chat.completions.create({
     messages: [{"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Can you generate a short 4 line description for a Pant product?"},
-        {"role": "assistant", "content": "Pants that you never want to get out off"}],
+        {"role": "user", "content": "Can you generate a short description for a Pant product?"},
+        {"role": "assistant", "content": "Pants you dont want to get out of"}],
     model: "gpt-3.5-turbo",
+    max_tokens: 64,
   });        
-  const description = completion.choices[0].message.content;
+  const description = completion.choices[0].message.content; 
+  const bundleOwnership = {"bundles" : true}
+  const collectionsToJoin = ["gid://shopify/Collection/296910160024", "gid://shopify/Collection/296910192792", "gid://shopify/Collection/296910258328" ].slice(0, Math.floor(randomSeed * 3));
+  const collectionsToLeave = ["gid://shopify/Collection/296910291096", "gid://shopify/Collection/296910323864", "gid://shopify/Collection/296910356632F"].slice(0, Math.floor(randomSeed * 3));
+  const giftCard = [true, false][Math.floor(randomSeed * 2)];
+  const giftCardTemplateSuffix = ["CardX", "CardY", "CardZ"][Math.floor(randomSeed * 3)];
+  const handle = title
+  const productMetafields = ["", {
+    "description": "random",
+    "key": "myKey",
+    "namespace": "myNamespace",
+    "type": "multi_line_text_field",
+    "value": "My super metafield value"
+    }][Math.floor(randomSeed * 2)];
+  const requiresSellingPlan = [true, false][Math.floor(randomSeed * 2)];
+  const status =  ["ACTIVE", "ARCHIVED", "DRAFT"][Math.floor(randomSeed * 3)];
+  const tags = ["Luxe", "El Cheapo", "Meh", "Overpriced"].slice(0, Math.floor(randomSeed * 4)) ;
+  const vendor = ["CK", "Gap", "BR", "Express"][Math.floor(randomSeed * 4)];
+
+
+ // const productCategory = {"productTaxonomyNodeID" : '173'}
+ //const customProductType = ["Pants", "Super Pants"][Math.floor(Math.random() * 3)];
+ //  const productType = "Pants"
+ //const standardizedProductType = {"productTaxonomyNodeId": "173"}
+ /* const seo =  {
+        "description": "",
+        "title": ""
+      }*/
+  
+/*
+  const productInputTemp =  {
+      "claimOwnership": bundleOwnership,
+      "collectionsToJoin": collectionsToJoin,
+      "collectionsToLeave": collectionsToLeave,
+      "giftCard": giftCard,
+      "giftCardTemplateSuffix": giftCardTemplateSuffix,
+      "handle": handle,
+      "metafields": productMetafields,
+      "options": optionArray,
+      "productCategory": productCategory,
+      "productOptions": optionArray,
+      "redirectNewHandle": true,
+      "requiresSellingPlan": true,
+      "status": status,
+      "tags": tags,
+      "templateSuffix": templateSuffix,
+      "title": title,
+      "vendor": vendor
+    }
+
+  console.log (productInputTemp) */
+ 
   const productInput = 
   {
-     "title": title,
+      "title": title,
       "descriptionHtml": description,
-      "productOptions": optionArray
+      "productOptions": optionArray,
+      "claimOwnership": bundleOwnership,
+      "collectionsToJoin": collectionsToJoin,
+      "giftCard": giftCard,
+      "giftCardTemplateSuffix": giftCardTemplateSuffix,
+      "handle": handle,
+      "redirectNewHandle": true,
+      "requiresSellingPlan": true,
+      "status": status,
+      "tags": tags,
+      "vendor": vendor,
+      "requiresSellingPlan": requiresSellingPlan
   }
-
     switch (dataRequested) {
         case 'input':
           return productInput;

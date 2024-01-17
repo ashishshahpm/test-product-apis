@@ -2,7 +2,7 @@
 
 name = "test-product-apis"
 client_id = "f3b68a748b937a4f38d5a1caf91a5ab9"
-application_url = "https://joy-comply-emacs-dpi.trycloudflare.com"
+application_url = "https://hope-registration-designation-encryption.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://joy-comply-emacs-dpi.trycloudflare.com/auth/callback",
-  "https://joy-comply-emacs-dpi.trycloudflare.com/auth/shopify/callback",
-  "https://joy-comply-emacs-dpi.trycloudflare.com/api/auth/callback",
-  "https://joy-comply-emacs-dpi.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://hope-registration-designation-encryption.trycloudflare.com/auth/callback",
+  "https://hope-registration-designation-encryption.trycloudflare.com/auth/shopify/callback",
+  "https://hope-registration-designation-encryption.trycloudflare.com/api/auth/callback",
+  "https://hope-registration-designation-encryption.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]

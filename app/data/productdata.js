@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: '', dangerouslyAllowBrowser: true });
+const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
 
 export default async function mediatdata(dataType) {
     const dataRequested = dataType
@@ -82,12 +82,33 @@ export default async function mediatdata(dataType) {
     const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
     const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36", "37"];
     
+    var i = 0;
+    const initColorValues =[]
+    const initSizeValues=[]
+    const initLengthValues= [] 
+
+    /*while (i<5) {
+      initColorValues.push({"name": color[i]});
+      initSizeValues.push({"name": size[i]});
+      initLengthValues.push({"name": length[i]});
+      i++;
+      console.log (initColorValues)
+    }
+
     const colorOption = {
+      "name": "Color",
+      "values": initColorValues
+    }*/
+
+
+   const colorOption = {
       "name": "Color",
       "values": [
         { "name": color[0] }
       ]
     }
+
+   // console.log (colorOption)
   
     const sizeOption = {
       "name": "Size",
@@ -113,7 +134,7 @@ export default async function mediatdata(dataType) {
     max_tokens: 64,
   });        
   const description = completion.choices[0].message.content; 
-  const bundleOwnership = {"bundles" : true}
+  const bundleOwnership = {"bundles" : false}
   const collectionsToJoin = ["gid://shopify/Collection/296910160024", "gid://shopify/Collection/296910192792", "gid://shopify/Collection/296910258328" ].slice(0, Math.floor(randomSeed * 3));
   const collectionsToLeave = ["gid://shopify/Collection/296910291096", "gid://shopify/Collection/296910323864", "gid://shopify/Collection/296910356632F"].slice(0, Math.floor(randomSeed * 3));
   const giftCard = [true, false][Math.floor(randomSeed * 2)];
@@ -132,7 +153,7 @@ export default async function mediatdata(dataType) {
   const vendor = ["CK", "Gap", "BR", "Express"][Math.floor(randomSeed * 4)];
 
 
- // const productCategory = {"productTaxonomyNodeID" : '173'}
+  const productCategory = {"productTaxonomyNodeId" : 'gid://shopify/ProductTaxonomyNode/173'}
  //const customProductType = ["Pants", "Super Pants"][Math.floor(Math.random() * 3)];
  //  const productType = "Pants"
  //const standardizedProductType = {"productTaxonomyNodeId": "173"}
@@ -163,7 +184,6 @@ export default async function mediatdata(dataType) {
     }
 
   console.log (productInputTemp) */
- 
   const productInput = 
   {
       "title": title,
@@ -179,8 +199,12 @@ export default async function mediatdata(dataType) {
       "status": status,
       "tags": tags,
       "vendor": vendor,
-      "requiresSellingPlan": requiresSellingPlan
+      "requiresSellingPlan": requiresSellingPlan,
+      "productCategory" : productCategory
   }
+
+  console.log (productInput)
+
     switch (dataRequested) {
         case 'input':
           return productInput;

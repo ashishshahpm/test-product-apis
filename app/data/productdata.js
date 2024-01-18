@@ -1,7 +1,9 @@
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
+const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
 
-export default async function mediatdata(dataType) {
+import fs from "fs";
+
+export default function mediatdata(dataType) {
     const dataRequested = dataType
     const randomSeed = Math.random();
     const material = ["Cotton","Denim","Polyester","Wool","Linen","Silk","Rayon","Nylon","Spandex","Leather","Velvet","Corduroy","Twill","Chiffon","Satin","Canvas","Suede","Polyurethane","Acrylic","Cashmere"][Math.floor(randomSeed * 20)];
@@ -82,50 +84,34 @@ export default async function mediatdata(dataType) {
     const size = ["24", "26", "28", "30", "32", "34", "36","38", "40", "42", "44", "46", "48"];
     const length = ["25", "26", "27", "28", "29", "30", "31","32", "33", "34", "35", "36", "37"];
     
-    var i = 0;
-    const initColorValues =[]
-    const initSizeValues=[]
-    const initLengthValues= [] 
-
-    /*while (i<5) {
-      initColorValues.push({"name": color[i]});
-      initSizeValues.push({"name": size[i]});
-      initLengthValues.push({"name": length[i]});
-      i++;
-      console.log (initColorValues)
-    }
-
     const colorOption = {
       "name": "Color",
-      "values": initColorValues
-    }*/
-
-
-   const colorOption = {
-      "name": "Color",
       "values": [
-        { "name": color[0] }
-      ]
+        { "name" : color[0] }, {"name": color[1] }, { "name": color[2] }, { "name": color[3] }, { "name": color[4] }, { "name": color[5] }, { "name": color[6] }, 
+        { "name": color[7] }, { "name": color[8] }, { "name": color[9] }, { "name": color[10] }, { "name": color[11] }, { "name": color[12] }
+      ].slice(0, Math.floor(randomSeed*13))
     }
-
-   // console.log (colorOption)
   
     const sizeOption = {
       "name": "Size",
         "values": [
-          { "name": size[0] }
-        ]
+          { "name" : size[0] }, {"name": size[1] }, { "name": size[2] }, { "name": size[3] }, { "name": size[4] }, { "name": size[5] }, { "name": size[6] }, 
+          { "name": size[7] }, { "name": size[8] }, { "name": size[9] }, { "name": size[10] }, { "name": size[11] }, { "name": size[12] }
+        ].slice(0, Math.floor(randomSeed*13))
     }
   
     const lengthOption = {
       "name": "Length",
         "values": [
-          { "name": length[0] }
-        ]
+          { "name" : length[0] }, {"name": length[1] }, { "name": length[2] }, { "name": length[3] }, { "name": length[4] }, { "name": length[5] }, { "name": length[6] }, 
+          { "name": length[7] }, { "name": length[8] }, { "name": length[9] }, { "name": length[10] }, { "name": length[11] }, { "name": length[12] }
+        ].slice(0, Math.floor(randomSeed*13))
     }
 
 // creating the optionValues variable that will be used in the productCreate mutation
   const optionArray = [colorOption, sizeOption, lengthOption]; 
+
+/* Using openAI APIs to generate a description
   const completion = await openai.chat.completions.create({
     messages: [{"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Can you generate a short description for a Pant product?"},
@@ -134,19 +120,30 @@ export default async function mediatdata(dataType) {
     max_tokens: 64,
   });        
   const description = completion.choices[0].message.content; 
+  */
+
+  //static descriptions
+  const description = ["Introducing our latest pant innovation, a game-changer in comfort and style. ", 
+  "The perfect pants blending comfort, style, and versatility. ",
+  "So Hawt these pants",
+  "The MVP of Pants",
+  "These pants are designed to make you feel like you never want to take them off."]
+  [Math.floor(randomSeed*5)]
+
   const bundleOwnership = {"bundles" : false}
   const collectionsToJoin = ["gid://shopify/Collection/296910160024", "gid://shopify/Collection/296910192792", "gid://shopify/Collection/296910258328" ].slice(0, Math.floor(randomSeed * 3));
   const collectionsToLeave = ["gid://shopify/Collection/296910291096", "gid://shopify/Collection/296910323864", "gid://shopify/Collection/296910356632F"].slice(0, Math.floor(randomSeed * 3));
-  const giftCard = [true, false][Math.floor(randomSeed * 2)];
+  //const giftCard = [true, false][Math.floor(randomSeed * 2)];
+  const giftCard = false
   const giftCardTemplateSuffix = ["CardX", "CardY", "CardZ"][Math.floor(randomSeed * 3)];
   const handle = title
-  const productMetafields = ["", {
+  const productMetafields = [{
     "description": "random",
     "key": "myKey",
     "namespace": "myNamespace",
     "type": "multi_line_text_field",
     "value": "My super metafield value"
-    }][Math.floor(randomSeed * 2)];
+    }]
   const requiresSellingPlan = [true, false][Math.floor(randomSeed * 2)];
   const status =  ["ACTIVE", "ARCHIVED", "DRAFT"][Math.floor(randomSeed * 3)];
   const tags = ["Luxe", "El Cheapo", "Meh", "Overpriced"].slice(0, Math.floor(randomSeed * 4)) ;
@@ -155,35 +152,13 @@ export default async function mediatdata(dataType) {
 
   const productCategory = {"productTaxonomyNodeId" : 'gid://shopify/ProductTaxonomyNode/173'}
  //const customProductType = ["Pants", "Super Pants"][Math.floor(Math.random() * 3)];
- //  const productType = "Pants"
+  const productType = ["Pants", "Trouser", "Bottoms", "Slacks"][Math.floor(randomSeed * 4)];
  //const standardizedProductType = {"productTaxonomyNodeId": "173"}
- /* const seo =  {
-        "description": "",
-        "title": ""
-      }*/
+  const seo =  {
+        "description": "Such an optimized SEO title",
+        "title": "Pants to knock your SEO socks off"
+      }
   
-/*
-  const productInputTemp =  {
-      "claimOwnership": bundleOwnership,
-      "collectionsToJoin": collectionsToJoin,
-      "collectionsToLeave": collectionsToLeave,
-      "giftCard": giftCard,
-      "giftCardTemplateSuffix": giftCardTemplateSuffix,
-      "handle": handle,
-      "metafields": productMetafields,
-      "options": optionArray,
-      "productCategory": productCategory,
-      "productOptions": optionArray,
-      "redirectNewHandle": true,
-      "requiresSellingPlan": true,
-      "status": status,
-      "tags": tags,
-      "templateSuffix": templateSuffix,
-      "title": title,
-      "vendor": vendor
-    }
-
-  console.log (productInputTemp) */
   const productInput = 
   {
       "title": title,
@@ -200,14 +175,25 @@ export default async function mediatdata(dataType) {
       "tags": tags,
       "vendor": vendor,
       "requiresSellingPlan": requiresSellingPlan,
-      "productCategory" : productCategory
+      "productCategory" : productCategory,
+      "productType" : productType,
+      "seo": seo,
+      "metafields": productMetafields
   }
-
-  console.log (productInput)
-
     switch (dataRequested) {
-        case 'input':
+        case 'input': {
+          //console.log (productInput)
+          //console.log (images)
+          const productInputString = JSON.stringify(productInput, null, 2);
+          const imagesOutputString = JSON.stringify(images, null, 2);
+
+          // Combine productInput and imagesOutput
+          const combinedData = `${productInputString}\n\n${imagesOutputString}`;
+
+          // Write combinedData to a local text file
+          fs.appendFileSync('productInput.txt', combinedData);
           return productInput;
+        }
         case 'images':
           return images; 
         case 'color':

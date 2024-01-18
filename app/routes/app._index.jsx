@@ -26,7 +26,7 @@ export const loader = async ({ request }) => {
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
   
- // assigning values for the options and their values 
+ /* assigning values for the options and their values 
  const colorPromise = productdata("color");
  const sizePromise = productdata("size");
  const lengthPromise = productdata("length");
@@ -40,32 +40,24 @@ export const action = async ({ request }) => {
  const inputPromise = productdata("input");
 
  const images = await imagesPromise;
- const productInput = await inputPromise
+ const productInput = await inputPromise */
+
+ //assigning values for the options and their values 
+ const color = productdata("color");
+ const size = productdata("size");
+ const length = productdata("length");
+
+
+// setting up the inputs for the productCreate mutation
+ const images = productdata("images");
+ const productInput = productdata("input");
 
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  //const numVariants = Math.floor(Math.random() * 27 + 1);
-  const numVariants = Math.floor(Math.random() * 10);
+  const numVariants = 50
+//  const numVariants = Math.floor(Math.random() * 10);
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   console.log('Number of options values per option is:' , numOptionValues)
-
-  const variantsToCreate = [];
-  let i = 0;
-  while (i < numVariants) {
-    colorPointer = Math.floor (i/(numOptionValues*numOptionValues));
-    sizePointer = Math.floor (i/numOptionValues)%numOptionValues;
-    lengthPointer = i%numOptionValues;
-    variantObject =  {
-      "price": i+1,
-      "optionValues": [
-        {"name": color[colorPointer], "optionName": "Color"},
-        {"name": size[sizePointer], "optionName": "Size"},
-        {"name": length[lengthPointer], "optionName": "Length"}
-      ]
-    }
-    variantsToCreate.push(variantObject);
-    i++;
-  }
 
   // calls the productCreate mutation
   const response = await admin.graphql(
@@ -110,6 +102,54 @@ export const action = async ({ request }) => {
   );
 
 
+
+  const variantsToCreate = [];
+  let i = 0;
+  while (i < numVariants) {
+    colorPointer = Math.floor (i/(numOptionValues*numOptionValues));
+    sizePointer = Math.floor (i/numOptionValues)%numOptionValues;
+    lengthPointer = i%numOptionValues;
+    variantObject =  {
+      "price": i+1,
+      "optionValues": [
+        {"name": color[colorPointer], "optionName": "Color"},
+        {"name": size[sizePointer], "optionName": "Size"},
+        {"name": length[lengthPointer], "optionName": "Length"}
+      ],
+      "barcode": "xyz",
+      "compareAtPrice": "12",
+      "harmonizedSystemCode": "0901.21",
+      "inventoryItem": {
+        "cost": "10",
+        "tracked": true
+      },
+      "inventoryPolicy": "DENY",
+      "inventoryQuantities": [
+        {
+          "availableQuantity": 10,
+          "locationId": "gid://shopify/Location/67798532248"
+        },
+        {
+          "availableQuantity": 20,
+          "locationId": "gid://shopify/Location/69417664664"
+        },
+        {
+          "availableQuantity": 30,
+          "locationId": "gid://shopify/Location/69417566360"
+        },
+        {
+          "availableQuantity": 40,
+          "locationId": "gid://shopify/Location/69417599128"
+        }
+      ]
+    }
+    variantsToCreate.push(variantObject);
+    i++;
+  }
+
+  
+
+
   const responseJson = await response.json();
   const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
 
@@ -122,8 +162,6 @@ export const action = async ({ request }) => {
       k = numVariants - j*250
     }
     else k = 250
-    console.log (j)
-    console.log (k)
     responseWithVariants = await admin.graphql (
       `#graphql
       mutation addVariants($productID: ID!, $strategy: ProductVariantsBulkCreateStrategy, $variantsInput: [ProductVariantsBulkInput!]!){
@@ -190,7 +228,7 @@ export default function Index() {
 
   return (
     <Page>
-      <ui-title-bar title="Remix app template">
+      <ui-title-bar title="Ashish's Test app">
         <button variant="primary" onClick={generateProduct}>
           Generate a product
         </button>
@@ -202,48 +240,12 @@ export default function Index() {
               <BlockStack gap="500">
                 <BlockStack gap="200">
                   <Text as="h2" variant="headingMd">
-                    Congrats on creating a new Shopify app 🎉
+                    App to test out the new GraphQL product APIs for increased variants 🎉
                   </Text>
                   <Text variant="bodyMd" as="p">
-                    This embedded app template uses{" "}
-                    <Link
-                      url="https://shopify.dev/docs/apps/tools/app-bridge"
-                      target="_blank"
-                      removeUnderline
-                    >
-                      App Bridge
-                    </Link>{" "}
-                    interface examples like an{" "}
-                    <Link url="/app/additional" removeUnderline>
-                      additional page in the app nav
-                    </Link>
-                    , as well as an{" "}
-                    <Link
-                      url="https://shopify.dev/docs/api/admin-graphql"
-                      target="_blank"
-                      removeUnderline
-                    >
-                      Admin GraphQL
-                    </Link>{" "}
-                    mutation demo, to provide a starting point for app
-                    development.
-                  </Text>
-                </BlockStack>
-                <BlockStack gap="200">
-                  <Text as="h3" variant="headingMd">
-                    Get started with products
-                  </Text>
-                  <Text as="p" variant="bodyMd">
-                    Generate a product with GraphQL and get the JSON output for
-                    that product. Learn more about the{" "}
-                    <Link
-                      url="https://shopify.dev/docs/api/admin-graphql/latest/mutations/productCreate"
-                      target="_blank"
-                      removeUnderline
-                    >
-                      productCreate
-                    </Link>{" "}
-                    mutation in our API references.
+                    Uses productCreate to generate product with 3 options, each with 13 option values. 
+                    <br />
+                    It then uses productVariantBulkCreate to generates x number of variants
                   </Text>
                 </BlockStack>
                 <InlineStack gap="300">
@@ -255,7 +257,7 @@ export default function Index() {
                     url = {`https://ashishtest-extendedvariants.myshopify.com/admin/apps/test-product-apis/deleteProduct`}
                     >
                       Delete product form
-                    </Button>
+                  </Button>
                   
                   {actionData?.productVariants && (
                     <Button
@@ -283,108 +285,6 @@ export default function Index() {
                 )}
               </BlockStack>
             </Card>
-          </Layout.Section>
-          <Layout.Section variant="oneThird">
-            <BlockStack gap="500">
-              <Card>
-                <BlockStack gap="200">
-                  <Text as="h2" variant="headingMd">
-                    App template specs
-                  </Text>
-                  <BlockStack gap="200">
-                    <InlineStack align="space-between">
-                      <Text as="span" variant="bodyMd">
-                        Framework
-                      </Text>
-                      <Link
-                        url="https://remix.run"
-                        target="_blank"
-                        removeUnderline
-                      >
-                        Remix
-                      </Link>
-                    </InlineStack>
-                    <InlineStack align="space-between">
-                      <Text as="span" variant="bodyMd">
-                        Database
-                      </Text>
-                      <Link
-                        url="https://www.prisma.io/"
-                        target="_blank"
-                        removeUnderline
-                      >
-                        Prisma
-                      </Link>
-                    </InlineStack>
-                    <InlineStack align="space-between">
-                      <Text as="span" variant="bodyMd">
-                        Interface
-                      </Text>
-                      <span>
-                        <Link
-                          url="https://polaris.shopify.com"
-                          target="_blank"
-                          removeUnderline
-                        >
-                          Polaris
-                        </Link>
-                        {", "}
-                        <Link
-                          url="https://shopify.dev/docs/apps/tools/app-bridge"
-                          target="_blank"
-                          removeUnderline
-                        >
-                          App Bridge
-                        </Link>
-                      </span>
-                    </InlineStack>
-                    <InlineStack align="space-between">
-                      <Text as="span" variant="bodyMd">
-                        API
-                      </Text>
-                      <Link
-                        url="https://shopify.dev/docs/api/admin-graphql"
-                        target="_blank"
-                        removeUnderline
-                      >
-                        GraphQL API
-                      </Link>
-                    </InlineStack>
-                  </BlockStack>
-                </BlockStack>
-              </Card>
-              <Card>
-                <BlockStack gap="200">
-                  <Text as="h2" variant="headingMd">
-                    Next steps
-                  </Text>
-                  <List>
-                    <List.Item>
-                      Build an{" "}
-                      <Link
-                        url="https://shopify.dev/docs/apps/getting-started/build-app-example"
-                        target="_blank"
-                        removeUnderline
-                      >
-                        {" "}
-                        example app
-                      </Link>{" "}
-                      to get started
-                    </List.Item>
-                    <List.Item>
-                      Explore Shopify’s API with{" "}
-                      <Link
-                        url="https://shopify.dev/docs/apps/tools/graphiql-admin-api"
-                        target="_blank"
-                        removeUnderline
-                      >
-                        GraphiQL
-                      </Link>
-                    </List.Item>
-                  </List>
-                </BlockStack>
-              </Card>
-            </BlockStack>
           </Layout.Section>
         </Layout>
       </BlockStack>

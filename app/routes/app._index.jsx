@@ -16,6 +16,8 @@ import {
 
 import { authenticate } from "../shopify.server";
 import productdata from "../data/productdata.js"
+import fs from "fs";
+
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -51,14 +53,11 @@ export const action = async ({ request }) => {
 // setting up the inputs for the productCreate mutation
  const images = productdata("images");
  const productInput = productdata("input");
-
-
+ 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  const numVariants = 50
+  const numVariants = 250
 //  const numVariants = Math.floor(Math.random() * 10);
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
-  console.log('Number of options values per option is:' , numOptionValues)
-
   // calls the productCreate mutation
   const response = await admin.graphql(
     `#graphql
@@ -116,7 +115,7 @@ export const action = async ({ request }) => {
         {"name": size[sizePointer], "optionName": "Size"},
         {"name": length[lengthPointer], "optionName": "Length"}
       ],
-      "barcode": "xyz",
+      "barcode": "xyz"+i,
       "compareAtPrice": "12",
       "harmonizedSystemCode": "0901.21",
       "inventoryItem": {
@@ -125,18 +124,18 @@ export const action = async ({ request }) => {
       },
       "inventoryPolicy": "DENY",
       "inventoryQuantities": [
-        {
+       /* {
           "availableQuantity": 10,
           "locationId": "gid://shopify/Location/67798532248"
-        },
+        }, 
         {
           "availableQuantity": 20,
           "locationId": "gid://shopify/Location/69417664664"
-        },
+        },*/ 
         {
           "availableQuantity": 30,
           "locationId": "gid://shopify/Location/69417566360"
-        },
+        }, 
         {
           "availableQuantity": 40,
           "locationId": "gid://shopify/Location/69417599128"
@@ -146,9 +145,6 @@ export const action = async ({ request }) => {
     variantsToCreate.push(variantObject);
     i++;
   }
-
-  
-
 
   const responseJson = await response.json();
   const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
@@ -193,6 +189,15 @@ export const action = async ({ request }) => {
   
     );
   }
+
+ const productInputString = JSON.stringify(productInput, null, 2);
+ const imagesInputString = JSON.stringify(images, null, 2);
+ const variantsInputString = JSON.stringify(variantsToCreate, null, 2);
+ const combinedData = `${productInputString}\n\n${imagesInputString}\n\n${variantsInputString}\n\n`;
+
+// Write combinedData to a local text file
+ fs.appendFileSync('productInput.txt', `Number of variants on this product are ${numVariants}\n`);
+ fs.appendFileSync('productInput.txt', combinedData);
 
   //console.log (i)
   console.log ('Number of variants to be created is:', numVariants)

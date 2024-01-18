@@ -1,5 +1,3 @@
-import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true });
 
 import fs from "fs";
 
@@ -130,20 +128,43 @@ export default function mediatdata(dataType) {
   "These pants are designed to make you feel like you never want to take them off."]
   [Math.floor(randomSeed*5)]
 
-  const bundleOwnership = {"bundles" : false}
+  const bundleOwnership = {"bundles" : [true,false][Math.floor(randomSeed * 2)]}
   const collectionsToJoin = ["gid://shopify/Collection/296910160024", "gid://shopify/Collection/296910192792", "gid://shopify/Collection/296910258328" ].slice(0, Math.floor(randomSeed * 3));
   const collectionsToLeave = ["gid://shopify/Collection/296910291096", "gid://shopify/Collection/296910323864", "gid://shopify/Collection/296910356632F"].slice(0, Math.floor(randomSeed * 3));
-  //const giftCard = [true, false][Math.floor(randomSeed * 2)];
-  const giftCard = false
+  const giftCard = [true, false][Math.floor(randomSeed * 2)];
+  //const giftCard = false
   const giftCardTemplateSuffix = ["CardX", "CardY", "CardZ"][Math.floor(randomSeed * 3)];
   const handle = title
-  const productMetafields = [{
-    "description": "random",
+  const productMetafields = [
+    {
+    "description": "random1",
     "key": "myKey",
     "namespace": "myNamespace",
     "type": "multi_line_text_field",
     "value": "My super metafield value"
-    }]
+    },
+    {
+      "description": "random2",
+      "key": "myKey",
+      "namespace": "myNamespace",
+      "type": "multi_line_text_field",
+      "value": "My super metafield value"
+      },
+      {
+        "description": "random3",
+        "key": "myKey",
+        "namespace": "myNamespace",
+        "type": "multi_line_text_field",
+        "value": "My super metafield value"
+        },
+        {
+          "description": "random4",
+          "key": "myKey",
+          "namespace": "myNamespace",
+          "type": "multi_line_text_field",
+          "value": "My super metafield value"
+          }
+  ].slice(0, Math.floor(randomSeed * 4))
   const requiresSellingPlan = [true, false][Math.floor(randomSeed * 2)];
   const status =  ["ACTIVE", "ARCHIVED", "DRAFT"][Math.floor(randomSeed * 3)];
   const tags = ["Luxe", "El Cheapo", "Meh", "Overpriced"].slice(0, Math.floor(randomSeed * 4)) ;
@@ -161,7 +182,7 @@ export default function mediatdata(dataType) {
   
   const productInput = 
   {
-      "title": title,
+     "title": title,
       "descriptionHtml": description,
       "productOptions": optionArray,
       "claimOwnership": bundleOwnership,
@@ -173,7 +194,7 @@ export default function mediatdata(dataType) {
       "requiresSellingPlan": true,
       "status": status,
       "tags": tags,
-      "vendor": vendor,
+     // "vendor": vendor,
       "requiresSellingPlan": requiresSellingPlan,
       "productCategory" : productCategory,
       "productType" : productType,
@@ -182,16 +203,8 @@ export default function mediatdata(dataType) {
   }
     switch (dataRequested) {
         case 'input': {
-          //console.log (productInput)
+          console.log (randomSeed)
           //console.log (images)
-          const productInputString = JSON.stringify(productInput, null, 2);
-          const imagesOutputString = JSON.stringify(images, null, 2);
-
-          // Combine productInput and imagesOutput
-          const combinedData = `${productInputString}\n\n${imagesOutputString}`;
-
-          // Write combinedData to a local text file
-          fs.appendFileSync('productInput.txt', combinedData);
           return productInput;
         }
         case 'images':

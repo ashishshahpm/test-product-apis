@@ -49,13 +49,40 @@ export const action = async ({ request }) => {
  const size = productdata("size");
  const length = productdata("length");
 
-
 // setting up the inputs for the productCreate mutation
  const images = productdata("images");
  const productInput = productdata("input");
  
+
+ const variantMetafields = [
+  {
+  "key": "myKey10",
+  "namespace": "myNamespace",
+  "type": "multi_line_text_field",
+  "value": "My super metafield value10"
+  },
+  {
+    "key": "myKey12",
+    "namespace": "myNamespace",
+    "type": "multi_line_text_field",
+    "value": "My super metafield value12"
+  },
+  {
+    "key": "myKey13",
+    "namespace": "myNamespace",
+    "type": "multi_line_text_field",
+    "value": "My super metafield value13"
+  },
+  {
+    "key": "myKey14",
+    "namespace": "myNamespace",
+    "type": "multi_line_text_field",
+    "value": "My super metafield value14"
+  }
+  ];
+
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  const numVariants = 250
+  const numVariants = 200;
 //  const numVariants = Math.floor(Math.random() * 10);
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   // calls the productCreate mutation
@@ -118,12 +145,10 @@ export const action = async ({ request }) => {
       "barcode": "xyz"+i,
       "compareAtPrice": "12",
       "harmonizedSystemCode": "0901.21",
-      "inventoryItem": {
-        "cost": "10",
-        "tracked": true
-      },
-      "inventoryPolicy": "DENY",
-      "inventoryQuantities": [
+    //  "mediaId" : "gid://shopify/MediaImage/36808569356440",
+      "metafields" : variantMetafields,
+      "inventoryPolicy": "DENY"
+      /*"inventoryQuantities": [
        /* {
           "availableQuantity": 10,
           "locationId": "gid://shopify/Location/67798532248"
@@ -131,7 +156,7 @@ export const action = async ({ request }) => {
         {
           "availableQuantity": 20,
           "locationId": "gid://shopify/Location/69417664664"
-        },*/ 
+        },
         {
           "availableQuantity": 30,
           "locationId": "gid://shopify/Location/69417566360"
@@ -140,7 +165,7 @@ export const action = async ({ request }) => {
           "availableQuantity": 40,
           "locationId": "gid://shopify/Location/69417599128"
         }
-      ]
+      ] */
     }
     variantsToCreate.push(variantObject);
     i++;
@@ -148,7 +173,6 @@ export const action = async ({ request }) => {
 
   const responseJson = await response.json();
   const createdProductID = responseJson.data.productCreate.product.id; // Read the product ID
-
   const mutationLoops =  Math.floor(numVariants/250);
   let k;
   // Add variants to the product

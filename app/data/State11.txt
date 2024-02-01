@@ -1,0 +1,723 @@
+Number of variants on this product are 25
+{
+  "title": "Wool Pants",
+  "descriptionHtml": "Introducing our latest pant innovation, a game-changer in comfort and style. ",
+  "productOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "name": "Red"
+        },
+        {
+          "name": "Green"
+        }
+      ]
+    },
+    {
+      "name": "Size",
+      "values": [
+        {
+          "name": "24"
+        },
+        {
+          "name": "26"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "name": "25"
+        },
+        {
+          "name": "26"
+        }
+      ]
+    }
+  ],
+  "claimOwnership": {
+    "bundles": true
+  },
+  "collectionsToJoin": [],
+  "handle": "Wool Pants",
+  "redirectNewHandle": true,
+  "requiresSellingPlan": true,
+  "status": "ACTIVE",
+  "tags": [],
+  "vendor": "CK",
+  "productCategory": {
+    "productTaxonomyNodeId": "gid://shopify/ProductTaxonomyNode/173"
+  },
+  "productType": "Pants",
+  "seo": {
+    "description": "Such an optimized SEO title",
+    "title": "Pants to knock your SEO socks off"
+  },
+  "metafields": []
+}
+
+[
+  {
+    "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+    "alt": "Bike scenic",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://super73.com/cdn/shop/files/SUPER73_In-Stock-Bikes_DesktopHero_06_1920x1080_88b91b74-161f-4217-ac58-30f6f38c282a.jpg?v=1704237874&width=3000",
+    "alt": "Bike driving",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://www.motorcyclistonline.com/resizer/wJwyoxEWfQHl6Im39g_Y4OpGbHI=/1440x0/filters:focal(712x394:722x404)/cloudfront-us-east-1.images.arcpublishing.com/octane/Y2NSC7AJEBBRZNOPUZZ3W25BPE.jpg",
+    "alt": "Bike stock",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://www.motorcyclistonline.com/resizer/bP-PiZaMqiHlzECKumDeNrqpDF4=/1440x0/filters:focal(709x485:719x495)/cloudfront-us-east-1.images.arcpublishing.com/octane/IDUJXT35CVDRHKRW4RHZV5KTGI.jpg",
+    "alt": "Bike stock again",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+    "alt": "Bike scenic",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://goodmorningwisher.com/wp-content/uploads/2023/08/Good-Morning-Thursday-Images-131.jpg",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://wishes1234.com/wp-content/uploads/2022/04/Purple-dahlia-flowers-in-vase.jpg",
+    "mediaContentType": "IMAGE"
+  }
+]
+
+[
+  {
+    "price": 1,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz0",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 2,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz1",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 3,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz2",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 4,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz3",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 5,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz4",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 6,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz5",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 7,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz6",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 8,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz7",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 9,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz8",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 10,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz9",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 11,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz10",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 12,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz11",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 13,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz12",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 14,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz13",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 15,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz14",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 16,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz15",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 17,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz16",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 18,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz17",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 19,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz18",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 20,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz19",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 21,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz20",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 22,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz21",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 23,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz22",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 24,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz23",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  },
+  {
+    "price": 25,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "barcode": "xyz24",
+    "compareAtPrice": "12",
+    "harmonizedSystemCode": "0901.21",
+    "inventoryItem": {
+      "cost": "10",
+      "tracked": true
+    },
+    "inventoryPolicy": "DENY"
+  }
+]

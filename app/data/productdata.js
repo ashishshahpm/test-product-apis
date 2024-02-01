@@ -87,7 +87,7 @@ export default function mediatdata(dataType) {
       "values": [
         { "name" : color[0] }, {"name": color[1] }, { "name": color[2] }, { "name": color[3] }, { "name": color[4] }, { "name": color[5] }, { "name": color[6] }, 
         { "name": color[7] }, { "name": color[8] }, { "name": color[9] }, { "name": color[10] }, { "name": color[11] }, { "name": color[12] }
-      ].slice(0, Math.floor(randomSeed*13))
+      ]
     }
   
     const sizeOption = {
@@ -95,7 +95,7 @@ export default function mediatdata(dataType) {
         "values": [
           { "name" : size[0] }, {"name": size[1] }, { "name": size[2] }, { "name": size[3] }, { "name": size[4] }, { "name": size[5] }, { "name": size[6] }, 
           { "name": size[7] }, { "name": size[8] }, { "name": size[9] }, { "name": size[10] }, { "name": size[11] }, { "name": size[12] }
-        ].slice(0, Math.floor(randomSeed*13))
+        ]
     }
   
     const lengthOption = {
@@ -103,7 +103,7 @@ export default function mediatdata(dataType) {
         "values": [
           { "name" : length[0] }, {"name": length[1] }, { "name": length[2] }, { "name": length[3] }, { "name": length[4] }, { "name": length[5] }, { "name": length[6] }, 
           { "name": length[7] }, { "name": length[8] }, { "name": length[9] }, { "name": length[10] }, { "name": length[11] }, { "name": length[12] }
-        ].slice(0, Math.floor(randomSeed*13))
+        ]
     }
 
 // creating the optionValues variable that will be used in the productCreate mutation
@@ -137,32 +137,28 @@ export default function mediatdata(dataType) {
   const handle = title
   const productMetafields = [
     {
-    "description": "random1",
     "key": "myKey",
     "namespace": "myNamespace",
     "type": "multi_line_text_field",
-    "value": "My super metafield value"
+    "value": "My super metafield value1"
     },
     {
-      "description": "random2",
       "key": "myKey",
       "namespace": "myNamespace",
       "type": "multi_line_text_field",
-      "value": "My super metafield value"
+      "value": "My super metafield value2"
       },
       {
-        "description": "random3",
         "key": "myKey",
         "namespace": "myNamespace",
         "type": "multi_line_text_field",
-        "value": "My super metafield value"
+        "value": "My super metafield value3"
         },
         {
-          "description": "random4",
           "key": "myKey",
           "namespace": "myNamespace",
           "type": "multi_line_text_field",
-          "value": "My super metafield value"
+          "value": "My super metafield value4"
           }
   ].slice(0, Math.floor(randomSeed * 4))
   const requiresSellingPlan = [true, false][Math.floor(randomSeed * 2)];
@@ -194,12 +190,19 @@ export default function mediatdata(dataType) {
       "requiresSellingPlan": true,
       "status": status,
       "tags": tags,
-     // "vendor": vendor,
+      "vendor": vendor,
       "requiresSellingPlan": requiresSellingPlan,
       "productCategory" : productCategory,
       "productType" : productType,
       "seo": seo,
-      "metafields": productMetafields
+      "metafields": [
+        {
+        "key": "myKeytoo",
+        "namespace": "myNamespace",
+        "type": "multi_line_text_field",
+        "value": "My duper values"
+        }
+      ]
   }
     switch (dataRequested) {
         case 'input': {

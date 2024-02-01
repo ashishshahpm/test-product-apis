@@ -1,0 +1,115 @@
+Number of variants on this product are 0
+{
+  "title": "Nylon Pants",
+  "descriptionHtml": "The perfect pants blending comfort, style, and versatility. ",
+  "productOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "name": "Red"
+        },
+        {
+          "name": "Green"
+        },
+        {
+          "name": "Blue"
+        },
+        {
+          "name": "Black"
+        },
+        {
+          "name": "Brown"
+        }
+      ]
+    },
+    {
+      "name": "Size",
+      "values": [
+        {
+          "name": "24"
+        },
+        {
+          "name": "26"
+        },
+        {
+          "name": "28"
+        },
+        {
+          "name": "30"
+        },
+        {
+          "name": "32"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "name": "25"
+        },
+        {
+          "name": "26"
+        },
+        {
+          "name": "27"
+        },
+        {
+          "name": "28"
+        },
+        {
+          "name": "29"
+        }
+      ]
+    }
+  ],
+  "claimOwnership": {
+    "bundles": true
+  },
+  "collectionsToJoin": [
+    "gid://shopify/Collection/296910160024"
+  ],
+  "giftCard": true,
+  "giftCardTemplateSuffix": "CardY",
+  "handle": "Nylon Pants",
+  "redirectNewHandle": true,
+  "requiresSellingPlan": true,
+  "status": "ARCHIVED",
+  "tags": [
+    "Luxe"
+  ],
+  "vendor": "Gap",
+  "productCategory": {
+    "productTaxonomyNodeId": "gid://shopify/ProductTaxonomyNode/173"
+  },
+  "productType": "Trouser",
+  "seo": {
+    "description": "Such an optimized SEO title",
+    "title": "Pants to knock your SEO socks off"
+  },
+  "metafields": [
+    {
+      "description": "random1",
+      "key": "myKey",
+      "namespace": "myNamespace",
+      "type": "multi_line_text_field",
+      "value": "My super metafield value"
+    }
+  ]
+}
+
+[
+  {
+    "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+    "alt": "Bike scenic",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://super73.com/cdn/shop/files/SUPER73_In-Stock-Bikes_DesktopHero_06_1920x1080_88b91b74-161f-4217-ac58-30f6f38c282a.jpg?v=1704237874&width=3000",
+    "alt": "Bike driving",
+    "mediaContentType": "IMAGE"
+  }
+]
+
+[]

@@ -1,0 +1,2031 @@
+Number of variants on this product are 50
+{
+  "title": "Acrylic Pants",
+  "descriptionHtml": "These pants are designed to make you feel like you never want to take them off.",
+  "productOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "name": "Red"
+        },
+        {
+          "name": "Green"
+        },
+        {
+          "name": "Blue"
+        },
+        {
+          "name": "Black"
+        },
+        {
+          "name": "Brown"
+        },
+        {
+          "name": "White"
+        },
+        {
+          "name": "Pink"
+        },
+        {
+          "name": "Purple"
+        },
+        {
+          "name": "Magenta"
+        },
+        {
+          "name": "Orange"
+        },
+        {
+          "name": "Yellow"
+        },
+        {
+          "name": "Violet"
+        }
+      ]
+    },
+    {
+      "name": "Size",
+      "values": [
+        {
+          "name": "24"
+        },
+        {
+          "name": "26"
+        },
+        {
+          "name": "28"
+        },
+        {
+          "name": "30"
+        },
+        {
+          "name": "32"
+        },
+        {
+          "name": "34"
+        },
+        {
+          "name": "36"
+        },
+        {
+          "name": "38"
+        },
+        {
+          "name": "40"
+        },
+        {
+          "name": "42"
+        },
+        {
+          "name": "44"
+        },
+        {
+          "name": "46"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "name": "25"
+        },
+        {
+          "name": "26"
+        },
+        {
+          "name": "27"
+        },
+        {
+          "name": "28"
+        },
+        {
+          "name": "29"
+        },
+        {
+          "name": "30"
+        },
+        {
+          "name": "31"
+        },
+        {
+          "name": "32"
+        },
+        {
+          "name": "33"
+        },
+        {
+          "name": "34"
+        },
+        {
+          "name": "35"
+        },
+        {
+          "name": "36"
+        }
+      ]
+    }
+  ],
+  "claimOwnership": {
+    "bundles": false
+  },
+  "collectionsToJoin": [
+    "gid://shopify/Collection/296910160024",
+    "gid://shopify/Collection/296910192792"
+  ],
+  "handle": "Acrylic Pants",
+  "redirectNewHandle": true,
+  "requiresSellingPlan": false,
+  "status": "DRAFT",
+  "tags": [
+    "Luxe",
+    "El Cheapo",
+    "Meh"
+  ],
+  "vendor": "Express",
+  "seo": {
+    "description": "Such an optimized SEO title",
+    "title": "Pants to knock your SEO socks off"
+  },
+  "metafields": [
+    {
+      "description": "random",
+      "key": "myKey",
+      "namespace": "myNamespace",
+      "type": "multi_line_text_field",
+      "value": "My super metafield value"
+    }
+  ]
+}
+
+[
+  {
+    "originalSource": "https://sgtautotransport.com/storage/81w0OTIXliOAn7GcOqkFYrQBNTsoMRztDde3jRrC.jpg",
+    "alt": "Bike scenic",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://super73.com/cdn/shop/files/SUPER73_In-Stock-Bikes_DesktopHero_06_1920x1080_88b91b74-161f-4217-ac58-30f6f38c282a.jpg?v=1704237874&width=3000",
+    "alt": "Bike driving",
+    "mediaContentType": "IMAGE"
+  },
+  {
+    "originalSource": "https://www.motorcyclistonline.com/resizer/wJwyoxEWfQHl6Im39g_Y4OpGbHI=/1440x0/filters:focal(712x394:722x404)/cloudfront-us-east-1.images.arcpublishing.com/octane/Y2NSC7AJEBBRZNOPUZZ3W25BPE.jpg",
+    "alt": "Bike stock",
+    "mediaContentType": "IMAGE"
+  }
+]
+
+[
+  {
+    "price": 1,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 2,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 3,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 4,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 5,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 6,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 7,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 8,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 9,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 10,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 11,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 12,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 13,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 14,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 15,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 16,
+    "optionValues": [
+      {
+        "name": "Red",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 17,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 18,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 19,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 20,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 21,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 22,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 23,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 24,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 25,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 26,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 27,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 28,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 29,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 30,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 31,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 32,
+    "optionValues": [
+      {
+        "name": "Green",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 33,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 34,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 35,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 36,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 37,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 38,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 39,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 40,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "26",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 41,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 42,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 43,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 44,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "28",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 45,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 46,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 47,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "27",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 48,
+    "optionValues": [
+      {
+        "name": "Blue",
+        "optionName": "Color"
+      },
+      {
+        "name": "30",
+        "optionName": "Size"
+      },
+      {
+        "name": "28",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 49,
+    "optionValues": [
+      {
+        "name": "Black",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "25",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  },
+  {
+    "price": 50,
+    "optionValues": [
+      {
+        "name": "Black",
+        "optionName": "Color"
+      },
+      {
+        "name": "24",
+        "optionName": "Size"
+      },
+      {
+        "name": "26",
+        "optionName": "Length"
+      }
+    ],
+    "harmonizedSystemCode": "0901.21",
+    "inventoryPolicy": "DENY",
+    "inventoryQuantities": [
+      {
+        "availableQuantity": 10,
+        "locationId": "gid://shopify/Location/67798532248"
+      },
+      {
+        "availableQuantity": 20,
+        "locationId": "gid://shopify/Location/69417664664"
+      },
+      {
+        "availableQuantity": 30,
+        "locationId": "gid://shopify/Location/69417566360"
+      },
+      {
+        "availableQuantity": 40,
+        "locationId": "gid://shopify/Location/69417599128"
+      }
+    ]
+  }
+]

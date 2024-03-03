@@ -25,6 +25,7 @@ export default function App() {
         <Link to="/app/additional">Additional page</Link>
         <Link to="/deleteProduct">Delete Product</Link>
         <Link to="/splitProduct">Split Product</Link>
+        <Link to="/queryProduct">Query Product</Link>
 
       </ui-nav-menu>
       <Outlet />

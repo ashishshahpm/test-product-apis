@@ -54,7 +54,7 @@ export const action = async ({ request }) => {
  const productInput = productdata("input");
  
 
- const variantMetafields = [
+/* const variantMetafields = [
   {
   "key": "myKey10",
   "namespace": "myNamespace",
@@ -80,9 +80,10 @@ export const action = async ({ request }) => {
     "value": "My super metafield value14"
   }
   ];
+*/
 
 //creating a variable that holds the inputs for the productVariantsBulkCreate mutation
-  const numVariants = 200;
+  const numVariants = 1;
 //  const numVariants = Math.floor(Math.random() * 10);
   const numOptionValues = Math.ceil(Math.pow(numVariants, (1/3)));
   // calls the productCreate mutation
@@ -128,7 +129,6 @@ export const action = async ({ request }) => {
   );
 
 
-
   const variantsToCreate = [];
   let i = 0;
   while (i < numVariants) {
@@ -145,11 +145,10 @@ export const action = async ({ request }) => {
       "barcode": "xyz"+i,
       "compareAtPrice": "12",
       "harmonizedSystemCode": "0901.21",
-    //  "mediaId" : "gid://shopify/MediaImage/36808569356440",
-      "metafields" : variantMetafields,
+   //   "metafields" : variantMetafields,
       "inventoryPolicy": "DENY"
-      /*"inventoryQuantities": [
-       /* {
+   /*   "inventoryQuantities": [
+        {
           "availableQuantity": 10,
           "locationId": "gid://shopify/Location/67798532248"
         }, 
@@ -165,7 +164,7 @@ export const action = async ({ request }) => {
           "availableQuantity": 40,
           "locationId": "gid://shopify/Location/69417599128"
         }
-      ] */
+      ]*/ 
     }
     variantsToCreate.push(variantObject);
     i++;
